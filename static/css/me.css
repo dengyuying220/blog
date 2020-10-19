@@ -1,3 +1,4 @@
+/* padded */
 .m-padded-mini {
   padding: 0.2em !important;
 }
@@ -50,9 +51,29 @@
   padding-bottom: 5em !important;
 }
 
+/* margin */
+.m-margin-tb-tiny {
+  margin-top: 0.3em !important;
+  margin-bottom: 0.3em !important;
+}
 
+.m-margin-top-small {
+  margin-top: 0.5em !important;
+}
+
+.m-margin-top {
+  margin-top: 1em !important;
+}
+
+.m-margin-top-large {
+  margin-top: 2em !important;
+}
 
 /* font */
+.m-black {
+  color: #333 !important;
+}
+
 .m-text {
   font-weight: 300 !important;
   letter-spacing: 1px !important;
@@ -71,6 +92,7 @@
   line-height: 1.8 !important;
 }
 
+/* opacity */
 .m-opacity-mini {
   opacity: 0.8 !important;
 }
@@ -83,4 +105,24 @@
 .m-container {
   max-width: 72em !important;
   margin: auto !important;
+}
+
+.m-right-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.m-mobile-show {
+  display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .m-mobile-hide {
+    display: none !important;
+  }
+
+  .m-mobile-show {
+    display: block !important;
+  }
 }
