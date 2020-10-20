@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>首页</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+  <link rel="stylesheet" href="./static/css/me.css" />
+</head>
+
+<body>
+  <!-- 导航 -->
+  <nav class="ui inverted segment attached">
+    <div class="ui container">
+      <div class="ui inverted secondary stackable menu">
+        <h2 class="ui teal header item m-padded-tb-mini">Blog</h2>
+        <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="idea  icon"></i>分类</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="tags  icon"></i>标签</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="clone  icon"></i>标签</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="info  icon"></i>关于我</a>
+        <div class="right item m-item m-mobile-hide">
+          <div class="ui inverted transparent icon input">
+            <input type="text" placeholder="Search..." />
+            <i class="search link icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="ui icon black button m-right-top m-mobile-show m-toggle">
+      <i class="inverted sidebar icon"></i>
+    </a>
+  </nav>
+
+  <!-- 中间内容 -->
+  <div class="m-padded-tb-big m-container-small">
+    <div class="ui container">
+      <div class="ui top attached segment">
+        <div class="ui horizontal list">
+          <div class="item">
+            <img src="https://picsum.photos/seed/picsum/100/100" alt="" class="ui avatar image">
+            <div class="content"><a href="#" class="header">李密仁</a></div>
+          </div>
+          <div class="item">
+            <i class="calendar grey disabled icon"></i> 2020-10-14
+          </div>
+          <div class="item">
+            <i class="eye icon disabled grey"></i> 2546
+          </div>
+        </div>
+      </div>
+      <div class="ui attached segment">
+        <img src="https://picsum.photos/seed/picsum/800/450" alt="" class="ui fluid rounded image">
+      </div>
+      <div class="ui attached m-padded segment">
+        <div class="ui right aligned basic segment">
+          <div class="ui orange basic label">原创</div>
+        </div>
+        <h2 class="ui center aligned header">Java | 带你理解 ServiceLoader 的原理与设计思想</h2>
+        <br>
+        <div id="content" class="m-padded-lr m-padded-tb-large">
+          <h2>2. ServiceLoader 使用步骤</h2>
+          <p>我们直接使用<code>JDBC</code>的例子，帮助各位建立起对<code>ServiceLoader</code>的基本了解，具体如下：</p>
+          <p>我们都知道<code>JDBC</code>编程有五大基本步骤：</p>
+          <ul>
+            <li>
+              <ol>
+                <li>执行数据库驱动类加载（非必须）：<code>Class.forName("com.mysql.jdbc.driver")</code>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <ol start="2">
+                <li>连接数据库：<code>DriverManager.getConnection(url, user, password)</code>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <ol start="3">
+                <li>创建SQL语句：<code>Connection#.creatstatement();</code>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <ol start="4">
+                <li>执行SQL语句并处理结果集：<code>Statement#executeQuery()</code>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <ol start="5">
+                <li>释放资源：<code>ResultSet#close()</code>、<code>Statement#close()</code>与<code>Connection#close()</code>
+                </li>
+              </ol>
+            </li>
+          </ul>
+          <p>操作数据库需要使用厂商提供的数据库驱动程序，直接使用厂商的驱动耦合太强了，更推荐的方法是使用<code>DriveManager</code>管理类：</p>
+          <h4>步骤1：定义服务接口</h4>
+          <p><code>JDBC</code>抽象出一个服务接口，数据库驱动实现类统一实现这个接口：</p>
+          <pre><code>public interface Driver {
+    // 创建数据库连接
+    Connection connect(String url, java.util.Properties info)
+        throws SQLException;
+
+    // 省略其他方法...
+}
+</code></pre>
+          <h4>步骤2：实现服务接口</h4>
+        </div>
+
+        <!-- 标签 -->
+        <div class="m-padded-lr">
+          <div class="ui basic teal left pointing label">方法论</div>
+        </div>
+        <!-- 赞赏 -->
+        <div class="ui center aligned basic segment">
+          <button id="payButton" class="ui basic orange circular button">赞赏</button>
+        </div>
+        <div class="ui payQR flowing popup transition hidden">
+          <div class="ui orange basic label">
+            <div class="ui images" style="font-size: inherit !important;">
+              <div class="ui image">
+                <img src="./static/images/wx.png" alt="" class="ui rounded bordered image" style="width: 120px;">
+                <div>支付宝</div>
+              </div>
+              <div class="ui image">
+                <img src="./static/images/wx.png" alt="" class="ui rounded bordered image" style="width: 120px;">
+                <div>微信</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="ui attached positive message">
+        博客信息
+      </div>
+      <div class="ui bottom attached segment">
+        留言
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+  <!-- 底部footer -->
+  <footer class="ui inverted segment attached m-padded-tb-massive">
+    <div class="ui center aligned container">
+      <div class="ui inverted divided stackable grid">
+        <div class="two wide column">
+          <img class="ui centered rounded image" style="width: 100px" src="./static/images/wx.png" alt="" />
+        </div>
+        <div class="four wide column">
+          <h4 class="ui inverted header m-font-thin m-font-spaced m-font-line">
+            最新博客
+          </h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item m-font-line">用户故事(User Story)</a>
+            <a href="#" class="item m-font-line">关于刻意练习的清单</a>
+            <a href="#" class="item m-font-line">失败要趁早</a>
+          </div>
+        </div>
+        <div class="four wide column">
+          <h4 class="ui inverted header m-font-thin m-font-spaced m-font-line">
+            联系我
+          </h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item m-font-line">Emain: 18208214305@163.com</a>
+            <a href="#" class="item m-font-line">QQ: 1187232061</a>
+          </div>
+        </div>
+        <div class="six wide column">
+          <h4 class="ui inverted header m-font-thin m-font-spaced m-font-line">
+            最新博客
+          </h4>
+          <div class="ui link list">
+            <p class="m-font-thin m-font-spaced m-font-line m-opacity-tiny">
+              这是我的个人博客、会分享关于编程、写作、思考相关的任何内容，希望可以给来到这儿的人有所帮助...
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="ui section divider"></div>
+      <p class="m-font-thin m-font-spaced m-font-line m-opacity-mini">
+        Copyright © 2009-2020
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js">
+    加载失败
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js">
+    加载失败
+  </script>
+  <script>
+    $(".m-toggle").click(function () {
+      $(".m-item").toggleClass("m-mobile-hide");
+    });
+  </script>
+</body>
+
+</html>

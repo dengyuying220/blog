@@ -51,6 +51,11 @@
   padding-bottom: 5em !important;
 }
 
+.m-padded-lr {
+  padding-left: 4em !important;
+  padding-right: 4em !important;
+}
+
 /* margin */
 .m-margin-tb-tiny {
   margin-top: 0.3em !important;
@@ -97,7 +102,15 @@
   opacity: 0.8 !important;
 }
 
+.m-opacity-tiny {
+  opacity: 0.6 !important;
+}
+
 /* dispaly */
+body {
+  background: url("../images/email-pattern.png");
+}
+
 .m-inline-block {
   display: inline-block;
 }
@@ -107,10 +120,16 @@
   margin: auto !important;
 }
 
+.m-container-small {
+  max-width: 60em !important;
+  margin: auto !important;
+}
+
 .m-right-top {
   position: absolute;
   top: 0;
   right: 0;
+  margin: 15px !important;
 }
 
 .m-mobile-show {
