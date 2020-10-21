@@ -110,6 +110,12 @@
   opacity: 0.6 !important;
 }
 
+/* shadow */
+.m-shadow-small {
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
 /* dispaly */
 body {
   background: url("../images/email-pattern.png");
@@ -154,6 +160,11 @@ body {
   }
 
   .m-padded-lr-responsive {
+    padding-left: 0em !important;
+    padding-right: 0em !important;
+  }
+
+  .m-mobile-lr-clear {
     padding-left: 0em !important;
     padding-right: 0em !important;
   }
