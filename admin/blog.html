@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>博客列表管理页</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+  <link rel="stylesheet" href="../static/css/me.css" />
+</head>
+
+<body>
+  <!-- 导航 -->
+  <nav class="ui inverted segment attached m-shadow-small">
+    <div class="ui container">
+      <div class="ui inverted secondary stackable menu">
+        <h2 class="ui teal header item m-padded-tb-mini">管理后台</h2>
+        <a href="#" class="active m-item item m-mobile-hide"><i class="home icon"></i>博客</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>标签</a>
+        <div class="right menu m-item m-mobile-hide">
+          <div class="ui dropdown item">
+            <div class="text">
+              <img src="https://picsum.photos/seed/picsum/100/100" alt="" class="ui avatar image" />李仁密
+            </div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <div class="item">注销</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="ui icon black button m-right-top m-mobile-show m-toggle">
+      <i class="inverted sidebar icon"></i>
+    </a>
+  </nav>
+
+  <!-- 二级导航 -->
+  <div class="ui attached pointing menu container">
+    <div class="ui container">
+      <div class="right menu">
+        <a href="#" class="item">发布</a>
+        <a href="#" class="active teal item">列表</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 中间内容 -->
+  <div class="m-padded-tb-big m-container-small">
+    <div class="ui container">
+      <form action="" class="ui segment form">
+        <div class="fields">
+          <div class="field">
+            <input type="text" name="title" placeholder="标题" />
+          </div>
+          <div class="field">
+            <div class="ui selection dropdown">
+              <div class="default text">分类</div>
+              <i class="dropdown icon"></i>
+              <input type="hidden" name="type" />
+              <div class="menu">
+                <div class="item" data-value="1">错误日志</div>
+                <div class="item" data-value="2">开发者手册</div>
+              </div>
+            </div>
+          </div>
+          <div class="field" style="display: flex;align-items: center;">
+            <div class="ui checkbox">
+              <input type="checkbox" name="recommend" id="recommend" class="hidden" />
+              <label for="recommend">推荐</label>
+            </div>
+          </div>
+          <div class="field" style="display: flex;align-items: center;">
+            <button class="ui teal basic mini button"><i class="search icon"></i>搜索</button>
+          </div>
+        </div>
+      </form>
+
+      <table class="ui celled table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>标题</th>
+            <th>类型</th>
+            <th>推荐</th>
+            <th>更新时间</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Age">1</td>
+            <td>刻意练习清单</td>
+            <td>认知升级</td>
+            <td>是</td>
+            <td>2020/10/27 14:24</td>
+            <td>
+              <a href="#" class="ui mini teal button">编辑</a>
+              <a href="#" class="ui mini red button">删除</a>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Age">1</td>
+            <td>刻意练习清单</td>
+            <td>认知升级</td>
+            <td>是</td>
+            <td>2020/10/27 14:24</td>
+            <td>
+              <a href="#" class="ui mini teal button">编辑</a>
+              <a href="#" class="ui mini red button">删除</a>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Age">1</td>
+            <td>刻意练习清单</td>
+            <td>认知升级</td>
+            <td>是</td>
+            <td>2020/10/27 14:24</td>
+            <td>
+              <a href="#" class="ui mini teal button">编辑</a>
+              <a href="#" class="ui mini red button">删除</a>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th colspan="6">
+              <div class="ui middle aligned grid">
+                <div class="four wide column">
+                  <div class="ui mini teal basic button item">新增</div>
+                </div>
+                <div class="twelve wide column">
+                  <div class="ui right floated pagination mini menu">
+                    <a class="icon item">
+                      <i class="left chevron icon"></i>
+                    </a>
+                    <a hr class="item">1</a>
+                    <a class="item">2</a>
+                    <a class="item">3</a>
+                    <a class="item">4</a>
+                    <a class="icon item">
+                      <i class="right chevron icon"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  <br />
+  <br />
+  <!-- 底部footer -->
+  <footer class="ui inverted segment attached m-padded-tb-massive">
+    <div class="ui center aligned container">
+      <div class="ui inverted divided stackable grid">
+        <div class="two wide column">
+          <img class="ui centered rounded image" style="width: 100px" src="../static/images/wx.png" alt="" />
+        </div>
+        <div class="four wide column">
+          <h4 class="ui inverted header m-font-thin m-font-spaced m-font-line">
+            最新博客
+          </h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item m-font-line">用户故事(User Story)</a>
+            <a href="#" class="item m-font-line">关于刻意练习的清单</a>
+            <a href="#" class="item m-font-line">失败要趁早</a>
+          </div>
+        </div>
+        <div class="four wide column">
+          <h4 class="ui inverted header m-font-thin m-font-spaced m-font-line">
+            联系我
+          </h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item m-font-line">Emain: 18208214305@163.com</a>
+            <a href="#" class="item m-font-line">QQ: 1187232061</a>
+          </div>
+        </div>
+        <div class="six wide column">
+          <h4 class="ui inverted header m-font-thin m-font-spaced m-font-line">
+            最新博客
+          </h4>
+          <div class="ui link list">
+            <p class="m-font-thin m-font-spaced m-font-line m-opacity-tiny">
+              这是我的个人博客、会分享关于编程、写作、思考相关的任何内容，希望可以给来到这儿的人有所帮助...
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="ui section divider"></div>
+      <p class="m-font-thin m-font-spaced m-font-line m-opacity-mini">
+        Copyright © 2009-2020
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js">
+    加载失败
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js">
+    加载失败
+  </script>
+  <script>
+    $(".m-toggle").click(function () {
+      $(".m-item").toggleClass("m-mobile-hide");
+    });
+    $(".ui.dropdown").dropdown();
+  </script>
+</body>
+
+</html>
