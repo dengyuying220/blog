@@ -81,7 +81,7 @@
             </div>
           </div>
           <div class="field">
-            <textarea placeholder="博客内容" name="content"> </textarea>
+            <textarea name="content" placeholder="博客内容"></textarea>
           </div>
           <div class="two fields">
             <div class="field">
@@ -112,6 +112,60 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="field">
+            <div class="ui labeled input">
+              <label class="ui teal basic label">首图</label>
+              <input type="text" name="indexPicture" placeholder="首图地址" />
+            </div>
+          </div>
+          <div class="inline fields">
+            <div class="field">
+              <div class="ui checkbox">
+                <input
+                  type="checkbox"
+                  class="hidden"
+                  name="recommend"
+                  id="recommend"
+                />
+                <label for="recommend">推荐</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui checkbox">
+                <input type="checkbox" class="hidden" name="copy" id="copy" />
+                <label for="copy">转载</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui checkbox">
+                <input
+                  type="checkbox"
+                  class="hidden"
+                  name="appreciate"
+                  id="appreciate"
+                />
+                <label for="appreciate">赞赏</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui checkbox">
+                <input
+                  type="checkbox"
+                  class="hidden"
+                  name="comment"
+                  id="comment"
+                />
+                <label for="comment">评论</label>
+              </div>
+            </div>
+          </div>
+          <div class="ui container">
+            <button class="ui button" onclick="window.history.go(-1)">
+              返回
+            </button>
+            <button class="ui secondary button">保存</button>
+            <button class="ui teal button">发布</button>
           </div>
         </form>
       </div>
@@ -188,6 +242,7 @@
         $(".m-item").toggleClass("m-mobile-hide");
       });
       $(".ui.dropdown").dropdown();
+      $(".ui.form").form();
     </script>
   </body>
 </html>
