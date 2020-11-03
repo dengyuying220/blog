@@ -61,6 +61,10 @@
 }
 
 /* margin */
+.m-margin-r-large {
+  margin-right: 2em !important;
+}
+
 .m-margin-r-big {
   margin-right: 3em !important;
 }
