@@ -7,9 +7,9 @@
   text-align: justify;
 } */
 
-.typo pre {
+/* .typo pre {
   white-space: pre-wrap !important;
-}
+} */
 
 /* 要注意表单元素并不继承父级 font 的问题 */
 .typo a,

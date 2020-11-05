@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./static/css/me.css" />
   <link rel="stylesheet" href="./static/css/typo.css" />
   <link rel="stylesheet" href="./static/css/animate.css" />
+  <link rel="stylesheet" href="./static/lib/prism/prism.css" />
 </head>
 
 <body>
@@ -350,22 +351,23 @@
             watching now. The following code is the best way to render typo in
             Chinese:
           </p>
-          <pre>
+          <pre><code class="language-css">
 /* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
-h1,h2,h3,h4,h5,h6 {
-    line-height:1;font-family:Arial,sans-serif;margin:1.4em 0 0.8em;
+          h1,h2,h3,h4,h5,h6 {
+                            line-height:1;font-family:Arial,sans-serif;margin:1.4em 0 0.8em;
 }
 h1{font-size:1.8em;}
 h2{font-size:1.6em;}
 h3{font-size:1.4em;}
 h4{font-size:1.2em;}
 h5,h6{font-size:1em;}
-            
+
 /* 现代排版：保证块/段落之间的空白隔行 */
 .typo p, .typo pre, .typo ul, .typo ol, .typo dl, .typo form, .typo hr {
-    margin:1em 0 0.6em;
+margin:1em 0 0.6em;
 }
-            </pre>
+          </code></pre>
+          <pre></pre>
 
           <h3 id="section3">三、附录</h3>
 
@@ -613,7 +615,7 @@ h5,h6{font-size:1em;}
           </div>
         </div>
       </div>
-      <div class="ui bottom attached segment">
+      <div id="comment_container" class="ui bottom attached segment">
         <div class="ui teal segment">
           <div class="ui threaded comments">
             <h3 class="ui dividing header">Comments</h3>
@@ -712,6 +714,12 @@ h5,h6{font-size:1em;}
       </div>
     </div>
   </div>
+  <div class="ui vertical icon buttons m-fixed m-right-bottom">
+    <button class="ui teal button">目录</button>
+    <a href="#comment_container" class="ui teal button">留言</a>
+    <button class="ui button"><i class="icon weixin"></i></button>
+    <a href="" class="ui icon button"><i class="icon chevron up"></i></a>
+  </div>
   <br />
   <br />
   <!-- 底部footer -->
@@ -758,12 +766,10 @@ h5,h6{font-size:1em;}
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js">
-    加载失败
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js">
-    加载失败
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+  <script src="./static/lib/prism/prism.js"></script>
+
   <script>
     $(".m-toggle").click(function () {
       $(".m-item").toggleClass("m-mobile-hide");
