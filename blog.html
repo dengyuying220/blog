@@ -38,7 +38,7 @@
   </nav>
 
   <!-- 中间内容 -->
-  <div class="m-padded-tb-big m-container-small animate__animated animate__fadeIn">
+  <div id="basic-waypoint" class="m-padded-tb-big m-container-small animate__animated animate__fadeIn">
     <div class="ui container">
       <div class="ui top attached segment">
         <div class="ui horizontal list">
@@ -716,13 +716,13 @@ margin:1em 0 0.6em;
     <div class="ui vertical icon buttons">
       <button class="ui teal button" id="tocBtn">目录</button>
       <a href="#comment_container" class="ui teal button">留言</a>
-      <a class="ui wx button"><i class="icon weixin"></i></a>
-      <a href="" class="ui icon button"><i class="icon chevron up"></i></a>
+      <a class="ui button wx"><i class="icon weixin"></i></a>
+      <div id="goUpBtn" class="ui icon button"><i class="icon chevron up"></i></div>
     </div>
     <div class="ui tocContainer flowing popup transition hidden js-toc" style="width: 250px !important">
     </div>
-    <div class="ui wx-qr flowing popup transition hidden">
-      <img src="./static/images/wx.png" alt="" class="ui rounded image" style="width: 120px !important;">
+    <div id="qrcode" class="ui wx-qr flowing popup transition hidden " style="width: 120px !important;">
+      <!-- <img src="./static/images/wx.png" alt="" class="ui rounded image" > -->
     </div>
   </div>
   </div>
@@ -776,6 +776,9 @@ margin:1em 0 0.6em;
   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
   <script src="./static/lib/prism/prism.js"></script>
   <script src="./static/lib/tocbot/tocbot.min.js"></script>
+  <script src="./static/lib/qrcode/qrcode.min.js"></script>
+  <script src="./static/lib/waypoints/jquery.waypoints.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
 
   <script>
     $(".m-toggle").click(function () {
@@ -788,6 +791,15 @@ margin:1em 0 0.6em;
     });
 
     // 微信
+
+    var qrcode = new QRCode("qrcode", {
+        text: "http://jindo.dev.naver.com/collie",
+        width: 110,
+        height: 110,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+      });
     $(".wx").popup({
       popup: $(".wx-qr"),
       position: "left center",
@@ -809,6 +821,16 @@ margin:1em 0 0.6em;
       on: "click",
       position: "left center",
     });
+    $("#goUpBtn").click(function () {
+      $(window).scrollTo(0,500);
+    })
+
+    var waypoint = new Waypoint({
+        element: document.getElementById('basic-waypoint'),
+        handler: function (direction) {
+          console.log('Basic waypoint triggered'  + direction)
+        }
+      })
   </script>
 </body>
 
