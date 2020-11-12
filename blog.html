@@ -38,7 +38,7 @@
   </nav>
 
   <!-- 中间内容 -->
-  <div id="basic-waypoint" class="m-padded-tb-big m-container-small animate__animated animate__fadeIn">
+  <div id="waypoint" class="m-padded-tb-big m-container-small animate__animated animate__fadeIn">
     <div class="ui container">
       <div class="ui top attached segment">
         <div class="ui horizontal list">
@@ -712,9 +712,9 @@ margin:1em 0 0.6em;
       </div>
     </div>
   </div>
-  <div class="m-padded m-fixed m-right-bottom">
+  <div id="toolbar" class="m-padded m-fixed m-right-bottom" style="display: none;">
     <div class="ui vertical icon buttons">
-      <button class="ui teal button" id="tocBtn">目录</button>
+      <a class="ui teal button" id="tocBtn">目录</a>
       <a href="#comment_container" class="ui teal button">留言</a>
       <a class="ui button wx"><i class="icon weixin"></i></a>
       <div id="goUpBtn" class="ui icon button"><i class="icon chevron up"></i></div>
@@ -793,13 +793,13 @@ margin:1em 0 0.6em;
     // 微信
 
     var qrcode = new QRCode("qrcode", {
-        text: "http://jindo.dev.naver.com/collie",
-        width: 110,
-        height: 110,
-        colorDark: "#000000",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.H
-      });
+      text: "http://jindo.dev.naver.com/collie",
+      width: 110,
+      height: 110,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
     $(".wx").popup({
       popup: $(".wx-qr"),
       position: "left center",
@@ -822,15 +822,20 @@ margin:1em 0 0.6em;
       position: "left center",
     });
     $("#goUpBtn").click(function () {
-      $(window).scrollTo(0,500);
+      $(window).scrollTo(0, 500);
     })
 
     var waypoint = new Waypoint({
-        element: document.getElementById('basic-waypoint'),
-        handler: function (direction) {
-          console.log('Basic waypoint triggered'  + direction)
+      element: document.getElementById('waypoint'),
+      handler: function (direction) {
+        if (direction == 'down') {
+          $("#toolbar").show(500);
+        } else {
+          $("#toolbar").hide(500);
         }
-      })
+        console.log('Direction: ' + direction)
+      }
+    })
   </script>
 </body>
 
