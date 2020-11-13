@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
     />
-    <link rel="stylesheet" href="../static/css/me.css" />
+    <link rel="stylesheet" th:href="@{/css/me.css}" href="../static/css/me.css" />
   </head>
 
   <body>
@@ -111,8 +111,7 @@
               </a>
             </div>
             <div class="ui wx-qr flowing popup transition hidden">
-              <img
-                src="../static/images/wx.png"
+              <img th:src="@{/images/wx.png}"
                 alt=""
                 class="ui rounded image"
                 style="width: 100px"
@@ -132,7 +131,7 @@
             <img
               class="ui centered rounded image"
               style="width: 100px"
-              src="../static/images/wx.png"
+              th:src="@{/images/wx.png}"
               alt=""
             />
           </div>
