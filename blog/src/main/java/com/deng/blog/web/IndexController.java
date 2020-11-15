@@ -18,6 +18,12 @@ public class IndexController {
 //            throw  new NotFoundException("博客不存在");
 //        }
         System.out.println("--------------index--------------");
+        return "index";
+    }
+
+    @GetMapping("/blog")
+    public String blog(/*@PathVariable Integer id, @PathVariable String name*/) {
+        System.out.println("--------------blog--------------");
         return "blog";
     }
 }

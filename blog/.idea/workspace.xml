@@ -2,18 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c93e9594-a5b2-4386-a457-1306d8f940c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/_fragment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/archive.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/archive.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deng/blog/web/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deng/blog/web/IndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/archive.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/archive.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/blog-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/blog-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/blog-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/blog-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.deng.blog.BlogApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.deng.blog.BlogApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.deng.blog.BlogApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.deng.blog.BlogApplicationTests.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +44,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/deng/blog/web" />
-    <property name="project.structure.last.edited" value="Problems" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
@@ -123,25 +122,25 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="512" y="177" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1604996135494" />
-    <state width="1340" height="123" key="GridCell.Tab.0.bottom" timestamp="1605267205559">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="1237" height="280" key="GridCell.Tab.0.bottom" timestamp="1605456765756">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605199143285" />
+    <state width="1237" height="280" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605456765756" />
     <state width="1340" height="123" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1605267205559" />
-    <state width="1340" height="123" key="GridCell.Tab.0.center" timestamp="1605267205559">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="1237" height="280" key="GridCell.Tab.0.center" timestamp="1605456765756">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605199143284" />
+    <state width="1237" height="280" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605456765756" />
     <state width="1340" height="123" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1605267205559" />
-    <state width="1340" height="123" key="GridCell.Tab.0.left" timestamp="1605267205559">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="1237" height="280" key="GridCell.Tab.0.left" timestamp="1605456765756">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605199143284" />
+    <state width="1237" height="280" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605456765756" />
     <state width="1340" height="123" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1605267205559" />
-    <state width="1340" height="123" key="GridCell.Tab.0.right" timestamp="1605267205559">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="1237" height="280" key="GridCell.Tab.0.right" timestamp="1605456765756">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605199143284" />
+    <state width="1237" height="280" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605456765756" />
     <state width="1340" height="123" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1605267205559" />
     <state width="1340" height="244" key="GridCell.Tab.1.bottom" timestamp="1605178317075">
       <screen x="0" y="0" width="1440" height="860" />
@@ -159,10 +158,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1340" height="244" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1605178317075" />
-    <state x="183" y="0" key="SettingsEditor" timestamp="1605195961456">
+    <state x="183" y="0" key="SettingsEditor" timestamp="1605283187151">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="183" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1605195961456" />
+    <state x="183" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1605283187151" />
     <state x="206" y="13" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1605160389487" />
     <state x="427" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1605263108254">
       <screen x="0" y="0" width="1440" height="860" />
