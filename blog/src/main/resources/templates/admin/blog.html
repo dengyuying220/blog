@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head th:replace="admin/_fragment :: head(~{::title})">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>博客列表管理页</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
-    />
-    <link rel="stylesheet" href="../../static/css/me.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"/>
+    <link rel="stylesheet" href="../../static/css/me.css"/>
   </head>
 
   <body>
@@ -17,23 +14,16 @@
       <div class="ui container">
         <div class="ui inverted secondary stackable menu">
           <h2 class="ui teal header item m-padded-tb-mini">管理后台</h2>
-          <a href="#" class="active m-item item m-mobile-hide"
-            ><i class="home icon"></i>博客</a
-          >
-          <a href="#" class="m-item item m-mobile-hide"
-            ><i class="idea icon"></i>分类</a
-          >
-          <a href="#" class="m-item item m-mobile-hide"
-            ><i class="tags icon"></i>标签</a
-          >
+          <a href="#" class="active m-item item m-mobile-hide">
+            <i class="home icon"></i>博客</a>
+          <a href="#" class="m-item item m-mobile-hide">
+            <i class="idea icon"></i>分类</a>
+          <a href="#" class="m-item item m-mobile-hide">
+            <i class="tags icon"></i>标签</a>
           <div class="right menu m-item m-mobile-hide">
             <div class="ui dropdown item">
               <div class="text">
-                <img
-                  src="https://picsum.photos/seed/picsum/100/100"
-                  alt=""
-                  class="ui avatar image"
-                />李仁密
+                <img src="https://picsum.photos/seed/picsum/100/100" alt="" class="ui avatar image"/>李仁密
               </div>
               <i class="dropdown icon"></i>
               <div class="menu">
@@ -43,10 +33,7 @@
           </div>
         </div>
       </div>
-      <a
-        href="#"
-        class="ui icon black button m-right-top m-mobile-show m-toggle"
-      >
+      <a href="#" class="ui icon black button m-right-top m-mobile-show m-toggle">
         <i class="inverted sidebar icon"></i>
       </a>
     </nav>
@@ -67,13 +54,13 @@
         <form action="" class="ui segment form">
           <div class="fields">
             <div class="field">
-              <input type="text" name="title" placeholder="标题" />
+              <input type="text" name="title" placeholder="标题"/>
             </div>
             <div class="field">
               <div class="ui selection dropdown">
                 <div class="default text">分类</div>
                 <i class="dropdown icon"></i>
-                <input type="hidden" name="type" />
+                <input type="hidden" name="type"/>
                 <div class="menu">
                   <div class="item" data-value="1">错误日志</div>
                   <div class="item" data-value="2">开发者手册</div>
@@ -82,12 +69,7 @@
             </div>
             <div class="field" style="display: flex; align-items: center">
               <div class="ui checkbox">
-                <input
-                  type="checkbox"
-                  name="recommend"
-                  id="recommend"
-                  class="hidden"
-                />
+                <input type="checkbox" name="recommend" id="recommend" class="hidden"/>
                 <label for="recommend">推荐</label>
               </div>
             </div>
@@ -173,24 +155,17 @@
         </table>
       </div>
     </div>
-    <br />
-    <br />
+    <br/>
+    <br/>
     <!-- 底部footer -->
-    <footer class="ui inverted segment attached m-padded-tb-massive">
+    <footer th:replace="admin/_fragment :: footer" class="ui inverted segment attached m-padded-tb-massive">
       <div class="ui center aligned container">
         <div class="ui inverted divided stackable grid">
           <div class="two wide column">
-            <img
-              class="ui centered rounded image"
-              style="width: 100px"
-              src="../../static/images/wx.png"
-              alt=""
-            />
+            <img class="ui centered rounded image" style="width: 100px" src="../../static/images/wx.png" alt=""/>
           </div>
           <div class="four wide column">
-            <h4
-              class="ui inverted header m-font-thin m-font-spaced m-font-line"
-            >
+            <h4 class="ui inverted header m-font-thin m-font-spaced m-font-line">
               最新博客
             </h4>
             <div class="ui inverted link list">
@@ -200,22 +175,16 @@
             </div>
           </div>
           <div class="four wide column">
-            <h4
-              class="ui inverted header m-font-thin m-font-spaced m-font-line"
-            >
+            <h4 class="ui inverted header m-font-thin m-font-spaced m-font-line">
               联系我
             </h4>
             <div class="ui inverted link list">
-              <a href="#" class="item m-font-line"
-                >Emain: 18208214305@163.com</a
-              >
+              <a href="#" class="item m-font-line">Emain: 18208214305@163.com</a>
               <a href="#" class="item m-font-line">QQ: 1187232061</a>
             </div>
           </div>
           <div class="six wide column">
-            <h4
-              class="ui inverted header m-font-thin m-font-spaced m-font-line"
-            >
+            <h4 class="ui inverted header m-font-thin m-font-spaced m-font-line">
               最新博客
             </h4>
             <div class="ui link list">
@@ -232,14 +201,8 @@
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js">
-      加载失败
-    </script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"
-    >
-      加载失败
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <script>
       $(".m-toggle").click(function () {
         $(".m-item").toggleClass("m-mobile-hide");
@@ -248,3 +211,4 @@
     </script>
   </body>
 </html>
+
