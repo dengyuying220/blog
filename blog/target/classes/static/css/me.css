@@ -159,6 +159,11 @@ body {
   margin: auto !important;
 }
 
+.m-container-tiny {
+  max-width: 30em !important;
+  margin: auto !important;
+}
+
 .m-right-top {
   position: absolute;
   top: 0;

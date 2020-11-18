@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c93e9594-a5b2-4386-a457-1306d8f940c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/po/Blog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/po/Comment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/po/Tag.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/po/Type.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/po/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/dao/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/service/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/admin/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/me.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/me.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/me.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/me.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -41,14 +43,15 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/deng/blog/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/admin" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\git-download\blog\blog\src\main\resources\templates\admin" />
       <recent name="F:\git-download\blog\blog\src\main\java\com\deng\blog\web" />
       <recent name="F:\git-download\blog\blog\src\main\resources\templates" />
     </key>
@@ -104,10 +107,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="469" y="239" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.860@0.0.1440.860" timestamp="1605096852336" />
-    <state x="518" y="244" key="#com.intellij.ide.util.MemberChooser" timestamp="1605520490199">
+    <state x="518" y="244" key="#com.intellij.ide.util.MemberChooser" timestamp="1605671477934">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="518" y="244" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1605520490199" />
+    <state x="518" y="244" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1605671477934" />
     <state width="483" height="466" key="DebuggerActiveHint" timestamp="1605165266053">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -120,50 +123,72 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="512" y="177" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1604996135494" />
-    <state width="1396" height="422" key="GridCell.Tab.0.bottom" timestamp="1605521358742">
+    <state width="1396" height="269" key="GridCell.Tab.0.bottom" timestamp="1605697510908">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1237" height="280" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605456765756" />
-    <state width="1396" height="422" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1605521358742" />
-    <state width="1396" height="422" key="GridCell.Tab.0.center" timestamp="1605521358742">
+    <state width="1396" height="269" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1605697510908" />
+    <state width="1396" height="269" key="GridCell.Tab.0.center" timestamp="1605697510908">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1237" height="280" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605456765756" />
-    <state width="1396" height="422" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1605521358742" />
-    <state width="1396" height="422" key="GridCell.Tab.0.left" timestamp="1605521358742">
+    <state width="1396" height="269" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1605697510908" />
+    <state width="1396" height="269" key="GridCell.Tab.0.left" timestamp="1605697510908">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1237" height="280" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605456765756" />
-    <state width="1396" height="422" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1605521358742" />
-    <state width="1396" height="422" key="GridCell.Tab.0.right" timestamp="1605521358742">
+    <state width="1396" height="269" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1605697510908" />
+    <state width="1396" height="269" key="GridCell.Tab.0.right" timestamp="1605697510908">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1237" height="280" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605456765756" />
-    <state width="1396" height="422" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1605521358742" />
-    <state width="1340" height="244" key="GridCell.Tab.1.bottom" timestamp="1605178317075">
+    <state width="1396" height="269" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1605697510908" />
+    <state width="1396" height="269" key="GridCell.Tab.1.bottom" timestamp="1605697510909">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1340" height="244" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1605178317075" />
-    <state width="1340" height="244" key="GridCell.Tab.1.center" timestamp="1605178317075">
+    <state width="1396" height="269" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1605697510909" />
+    <state width="1396" height="269" key="GridCell.Tab.1.center" timestamp="1605697510909">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1340" height="244" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1605178317075" />
-    <state width="1340" height="244" key="GridCell.Tab.1.left" timestamp="1605178317075">
+    <state width="1396" height="269" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1605697510909" />
+    <state width="1396" height="269" key="GridCell.Tab.1.left" timestamp="1605697510909">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1340" height="244" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1605178317075" />
-    <state width="1340" height="244" key="GridCell.Tab.1.right" timestamp="1605178317075">
+    <state width="1396" height="269" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1605697510909" />
+    <state width="1396" height="269" key="GridCell.Tab.1.right" timestamp="1605697510909">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1340" height="244" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1605178317075" />
-    <state x="183" y="0" key="SettingsEditor" timestamp="1605283187151">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1396" height="269" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1605697510909" />
+    <state x="206" y="13" key="SettingsEditor" timestamp="1605671088840">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="183" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1605283187151" />
-    <state x="206" y="13" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1605160389487" />
-    <state x="427" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1605509397458">
+    <state x="206" y="13" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1605671088840" />
+    <state x="427" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1605669299433">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="427" y="256" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1605509397458" />
+    <state x="427" y="256" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1605669299433" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/deng/blog/web/admin/LoginController.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/deng/blog/service/UserServiceImpl.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/deng/blog/dao/UserRepository.java</url>
+          <line>12</line>
+          <properties class="com.deng.blog.dao.UserRepository" method="findByUsernameAndPassword" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
