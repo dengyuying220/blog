@@ -41,13 +41,13 @@ public class LoginController {
             return "admin/index";
         } else {
             attributes.addFlashAttribute("message", "用户名和密码错误");
-            return "rediract:admin/login";
+            return "redirect:/admin";
         }
     }
 
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.removeAttribute("user");
-        return "rediract:admin/";
+        return "redirect:/admin";
     }
 }
