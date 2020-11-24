@@ -27,10 +27,10 @@ public class LoginController {
         return "admin/login";
     }
 
-    @GetMapping("blog")
+    /*@GetMapping("blog")
     public  String blogPage() {
         return "admin/blog";
-    }
+    }*/
 
     @PostMapping("/login")
     public String login(@RequestParam String username, @RequestParam String password, HttpSession session, RedirectAttributes attributes) {
