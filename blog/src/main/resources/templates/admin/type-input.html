@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<!--head-->
-<head th:fragment="head(title)">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title th:replace="${title}"></title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
-    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}" />
-    <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/css/typo.css}"  />
-    <link rel="stylesheet" href="../static/css/animate.css" th:href="@{/css/animate.css}"  />
-    <link rel="stylesheet" href="../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}"  />
-    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}"  />
+<html lang="en">
+<head th:replace="admin/_fragment :: head(~{::title})">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>分类新增</title>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
+    <link rel="stylesheet" href="../../static/css/me.css"/>
+    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.css"/>
+    <!-- <link rel="stylesheet" href="../css/editormd.css" /> -->
 </head>
-<body>
 
+<body>
 <!-- 导航 -->
-<nav th:fragment="menu(n)" class="ui inverted segment attached m-shadow-small">
+<nav th:replace="admin/_fragment :: menu(2)" class="ui inverted segment attached m-shadow-small">
     <div class="ui container">
         <div class="ui inverted secondary stackable menu">
             <h2 class="ui teal header item m-padded-tb-mini">管理后台</h2>
-            <a href="#" th:href="@{/admin/blog}" th:classappend="${n==1} ? 'active'" class="m-item item m-mobile-hide">
+            <a href="#" class="m-item item m-mobile-hide">
                 <i class="home icon"></i>博客</a>
-            <a href="#" th:href="@{/admin/type}" th:classappend="${n==2} ? 'active'" class="m-item item m-mobile-hide">
+            <a href="#" class="m-item item m-mobile-hide">
                 <i class="idea icon"></i>分类</a>
-            <a href="#" th:href="@{/admin/tag}" th:classappend="${n==3} ? 'active'" class="m-item item m-mobile-hide">
+            <a href="#" class="m-item item m-mobile-hide">
                 <i class="tags icon"></i>标签</a>
             <div class="right menu m-item m-mobile-hide">
                 <div class="ui dropdown item">
                     <div class="text">
-                        <img src="https://picsum.photos/seed/picsum/100/100" alt="" class="ui avatar image"/>邓渝蓥
+                        <img src="https://picsum.photos/seed/picsum/100/100" alt="" class="ui avatar image"/>李仁密
                     </div>
                     <i class="dropdown icon"></i>
                     <div class="menu">
-                        <a th:href="@{/admin/logout}" class="item">注销</a>
+                        <div class="item">注销</div>
                     </div>
                 </div>
             </div>
@@ -43,17 +43,53 @@
     </a>
 </nav>
 
+<!-- 二级导航 -->
+<div class="ui attached pointing menu container">
+    <div class="ui container">
+        <div class="right menu">
+            <a href="#" class="active teal item">发布</a>
+            <a href="#" class="item">列表</a>
+        </div>
+    </div>
+</div>
 
-
+<!-- 中间内容 -->
+<div class="m-padded-tb-big m-container-small">
+    <div class="ui container">
+        <form action="" class="ui form">
+            <div class="field">
+                <div class="ui labeled input">
+                    <label class="ui teal basic label">名称</label>
+                    <input type="text" name="name" placeholder="分类名称"/>
+                </div>
+            </div>
+            <div class="ui error message"></div>
+            <div class="ui right aligned container">
+                <button class="ui button" onclick="window.history.go(-1)">
+                    返回
+                </button>
+                <button class="ui teal button">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 <!-- 底部footer -->
-<footer th:fragment="footer" class="ui inverted segment attached m-padded-tb-massive">
+<footer th:replace="admin/_fragment :: footer" class="ui inverted segment attached m-padded-tb-massive">
     <div class="ui center aligned container">
         <div class="ui inverted divided stackable grid">
             <div class="two wide column">
                 <img
                         class="ui centered rounded image"
                         style="width: 100px"
-                        th:src="@{/images/wx.png}"
+                        src="../../static/images/wx.png"
                         alt=""
                 />
             </div>
@@ -101,21 +137,39 @@
         </p>
     </div>
 </footer>
-<!-- js -->
-<th:block th:fragment="script">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-    <script src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
-    <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
-    <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
-    <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
-    <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
-</th:block>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js">
+      加载失败
+
+
+</script>
+<script
+        src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"
+>
+      加载失败
+
+
+</script>
 <script>
-    $(".m-toggle").click(function () {
-      $(".m-item").toggleClass("m-mobile-hide");
-    });
-    $(".ui.dropdown").dropdown();
-  </script>
+      $(".m-toggle").click(function () {
+        $(".m-item").toggleClass("m-mobile-hide");
+      });
+      $(".ui.dropdown").dropdown();
+      $(".ui.form").form({
+        fields: {
+          name: {
+            identifier: "name",
+            rules: [
+              {
+                type: "empty",
+                prompt: "名称：请输入分类名称",
+              },
+            ],
+          },
+        },
+      });
+
+
+</script>
 </body>
 </html>

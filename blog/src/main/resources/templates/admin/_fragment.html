@@ -19,11 +19,11 @@
     <div class="ui container">
         <div class="ui inverted secondary stackable menu">
             <h2 class="ui teal header item m-padded-tb-mini">管理后台</h2>
-            <a href="#" th:classappend="${n==1} ? 'active'" class="m-item item m-mobile-hide">
+            <a href="#" th:href="@{/admin/blog}" th:classappend="${n==1} ? 'active'" class="m-item item m-mobile-hide">
                 <i class="home icon"></i>博客</a>
-            <a href="#" th:classappend="${n==2} ? 'active'" class="m-item item m-mobile-hide">
+            <a href="#" th:href="@{/admin/type}" th:classappend="${n==2} ? 'active'" class="m-item item m-mobile-hide">
                 <i class="idea icon"></i>分类</a>
-            <a href="#" th:classappend="${n==3} ? 'active'" class="m-item item m-mobile-hide">
+            <a href="#" th:href="@{/admin/tag}" th:classappend="${n==3} ? 'active'" class="m-item item m-mobile-hide">
                 <i class="tags icon"></i>标签</a>
             <div class="right menu m-item m-mobile-hide">
                 <div class="ui dropdown item">
@@ -42,6 +42,7 @@
         <i class="inverted sidebar icon"></i>
     </a>
 </nav>
+
 
 
 <!-- 底部footer -->

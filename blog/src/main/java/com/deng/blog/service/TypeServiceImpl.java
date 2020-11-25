@@ -1,0 +1,58 @@
+package com.deng.blog.service;
+
+import com.deng.blog.NotFoundException;
+import com.deng.blog.dao.TypeRepository;
+import com.deng.blog.po.Type;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
+
+/**
+ * created by deng on 2020-11-25
+ **/
+@Service
+public class TypeServiceImpl implements TypeService {
+
+    @Autowired
+    private TypeRepository typeRepository;
+
+    @Transactional
+    @Override
+    public Type saveType(Type type) {
+        return typeRepository.save(type);
+    }
+
+    @Transactional
+    @Override
+    public Type getType(Long id) {
+        return typeRepository.getOne(id);
+    }
+
+    @Transactional
+    @Override
+    public Page<Type> listType(Pageable pageable) {
+        return typeRepository.findAll(pageable);
+    }
+
+    @Transactional
+    @Override
+    public Type updateType(Long id, Type type) {
+        Type t =typeRepository.getOne(id);
+        if (t == null) {
+            throw new NotFoundException("不存在该类型");
+        }
+        BeanUtils.copyProperties(type, t);
+        typeRepository.save(t);
+        return null;
+    }
+
+    @Transactional
+    @Override
+    public void deleteType(Long id) {
+        typeRepository.deleteById(id);
+    }
+}
