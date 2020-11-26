@@ -61,47 +61,41 @@
             </thead>
             <tbody>
             <tr th:each="type, iterStat: ${page.content}">
-                <td th:text="${iterStat.count}">1</tdth>
+                <td th:text="${iterStat.count}">1</td>
                 <td th:text="${type.name}">刻意练习清单</td>
                 <td>
                     <a href="#" th:href="@{/admin/}" class="ui mini teal button">编辑</a>
                     <a href="#" class="ui mini red button">删除</a>
                 </td>
             </tr>
-            <tr>
-                <td data-label="Age">1</td>
+            <!--<tr>
+                <td>1</td>
                 <td>刻意练习清单</td>
                 <td>
                     <a href="#" class="ui mini teal button">编辑</a>
                     <a href="#" class="ui mini red button">删除</a>
                 </td>
-            </tr>
-            <tr>
-                <td data-label="Age">1</td>
-                <td>刻意练习清单</td>
-                <td>
-                    <a href="#" class="ui mini teal button">编辑</a>
-                    <a href="#" class="ui mini red button">删除</a>
-                </td>
-            </tr>
+            </tr>-->
             </tbody>
             <tfoot>
             <tr>
-                <th colspan="6">
+                <th colspan="3">
                     <div class="ui middle aligned grid">
                         <div class="four wide column">
                             <a th:href="@{/admin/type/input}" class="ui mini teal basic button item">新增</a>
                         </div>
                         <div class="twelve wide column">
                             <div class="ui right floated pagination mini menu">
-                                <a th:href="@{/admin/type/(page=${page.number}-1)" class="icon item">
+                                <a th:href="@{/admin/type/(page=${page.getNumber() - 4})}"
+                                   th:unless="${page.isFirst()}"
+                                   th:classappend="${page.getNumber()==1} ? 'disabled'" class="icon item ">
                                     <i class="left chevron icon"></i>
                                 </a>
-                                <a hr class="item">1</a>
-                                <a class="item">2</a>
-                                <a class="item">3</a>
-                                <a class="item">4</a>
-                                <a th:href="@{/admin/type/(page=${page.number}+1)" class="icon item">
+                                <a class="item" th:href="@{/admin/type/(page=${page.getNumber() + index - 1})}"
+                                   th:if="${page.getNumber() + index <= page.getTotalPages()}"
+                                   th:each="index:${#numbers.sequence(1, 4)}" th:text="${page.getNumber() + index}">1</a>
+                                <a th:href="@{/admin/type/(page=${page.getNumber() + 4})}"
+                                   th:unless="${page.getNumber() + 4 >= page.getTotalPages()}" class="icon item">
                                     <i class="right chevron icon"></i>
                                 </a>
                             </div>
@@ -113,6 +107,10 @@
         </table>
     </div>
 </div>
+<br/>
+<br/>
+<br/>
+<br/>
 <br/>
 <br/>
 <!-- 底部footer -->
