@@ -56,14 +56,19 @@
 <!-- 中间内容 -->
 <div class="m-padded-tb-big m-container-small">
     <div class="ui container">
-        <form action="" method="post" th:action="@{/admin/type}" class="ui form">
-            <div class="field">
+        <form action="" method="post" th:action="@{/admin/type}" th:object="${type}" class="ui form">
+            <div class="required field">
                 <div class="ui labeled input">
                     <label class="ui teal basic label">名称</label>
-                    <input type="text" name="name" placeholder="分类名称"/>
+                    <input type="text" name="name" th:value="*{name}" placeholder="分类名称"/>
                 </div>
             </div>
             <div class="ui error message"></div>
+            <div class="ui negative message" th:if="${#fields.hasErrors('name')}">
+                <i class="close icon"></i>
+                <div class="header">验证失败</div>
+                <p th:errors="*{name}"></p>
+            </div>
             <div class="ui right aligned container">
                 <button class="ui button" onclick="window.history.go(-1)">
                     返回
@@ -141,18 +146,8 @@
     </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js">
-      加载失败
-
-
-</script>
-<script
-        src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"
->
-      加载失败
-
-
-</script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 <script>
       $(".m-toggle").click(function () {
         $(".m-item").toggleClass("m-mobile-hide");
@@ -161,7 +156,7 @@
       $(".ui.form").form({
         fields: {
           name: {
-            identifier: "name",
+            identifier: "name111",
             rules: [
               {
                 type: "empty",
@@ -171,7 +166,12 @@
           },
         },
       });
-
+      $(".message .close")
+        .on("click", function () {
+        $(this)
+            .closest(".message")
+            .transition("fade");
+      });
 
 </script>
 </body>

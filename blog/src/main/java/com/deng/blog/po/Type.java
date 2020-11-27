@@ -1,8 +1,10 @@
 package com.deng.blog.po;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * created by deng on 2020-11-16
@@ -13,6 +15,8 @@ public class Type {
     @Id
     @GeneratedValue
     private Long id;
+
+    @NotBlank(message = "分类名称不能为空")
     private String name;
 
     @OneToMany(mappedBy = "type")

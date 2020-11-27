@@ -51,6 +51,16 @@
 <!-- 中间内容 -->
 <div class="m-padded-tb-big m-container-small">
     <div class="ui container">
+        <div class="ui success message" th:unless="${#strings.isEmpty(succMessage)}">
+            <i class="close icon"></i>
+            <div class="header">提示：</div>
+            <p th:text="${succMessage}">恭喜，操作成功</p>
+        </div>
+        <div class="ui error message" th:unless="${#strings.isEmpty(errMessage)}">
+            <i class="close icon"></i>
+            <div class="header">提示：</div>
+            <p th:text="${errMessage}">操作失败</p>
+        </div>
         <table class="ui celled table">
             <thead>
             <tr>
@@ -64,18 +74,10 @@
                 <td th:text="${iterStat.count}">1</td>
                 <td th:text="${type.name}">刻意练习清单</td>
                 <td>
-                    <a href="#" th:href="@{/admin/}" class="ui mini teal button">编辑</a>
+                    <a href="#" th:href="@{/admin/type/{id}/input(id=${type.id})}" class="ui mini teal button">编辑</a>
                     <a href="#" class="ui mini red button">删除</a>
                 </td>
             </tr>
-            <!--<tr>
-                <td>1</td>
-                <td>刻意练习清单</td>
-                <td>
-                    <a href="#" class="ui mini teal button">编辑</a>
-                    <a href="#" class="ui mini red button">删除</a>
-                </td>
-            </tr>-->
             </tbody>
             <tfoot>
             <tr>
@@ -164,6 +166,12 @@
         $(".m-item").toggleClass("m-mobile-hide");
       });
       $(".ui.dropdown").dropdown();
+      $(".message .close")
+        .on("click", function () {
+            $(this)
+                .closest(".message")
+                .transition("fade");
+      });
     </script>
 </body>
 </html>
