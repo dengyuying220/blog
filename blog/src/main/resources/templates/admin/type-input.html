@@ -47,8 +47,8 @@
 <div class="ui attached pointing menu container">
     <div class="ui container">
         <div class="right menu">
-            <a href="#" class="active teal item">发布</a>
-            <a href="#" class="item">列表</a>
+            <a th:href="@{/admin/type/input}" class="active teal item">发布</a>
+            <a th:href="@{/admin/type}" class="item">列表</a>
         </div>
     </div>
 </div>
@@ -56,7 +56,9 @@
 <!-- 中间内容 -->
 <div class="m-padded-tb-big m-container-small">
     <div class="ui container">
-        <form action="" method="post" th:action="@{/admin/type}" th:object="${type}" class="ui form">
+        <form action="" method="post" th:action="*{id}==null ? @{/admin/type} : @{/admin/type/{id}(id=*{id})}"
+              th:object="${type}" class="ui form">
+            <input type="hidden" th:value="*{id}" />
             <div class="required field">
                 <div class="ui labeled input">
                     <label class="ui teal basic label">名称</label>

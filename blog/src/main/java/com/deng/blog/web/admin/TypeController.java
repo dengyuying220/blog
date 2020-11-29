@@ -3,7 +3,6 @@ package com.deng.blog.web.admin;
 import com.deng.blog.po.Type;
 import com.deng.blog.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.bind.BindResult;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -61,12 +60,39 @@ public class TypeController {
         }
 
         Type sType = typeService.saveType(type);
-        if (sType != null) {
-            attributes.addFlashAttribute("errMessage", "操作失败");
+        if (sType == null) {
+            attributes.addFlashAttribute("errMessage", "新增失败");
         } else {
-            attributes.addFlashAttribute("succMessage", "操作成功");
+            attributes.addFlashAttribute("succMessage", "新增成功");
         }
         return "redirect:/admin/type";
     }
 
+    @PostMapping("/type/{id}")
+    public String editPost(@Valid Type type, BindingResult result, @PathVariable Long id, RedirectAttributes attributes) {
+
+        Type fType = typeService.getTypeByName(type.getName());
+        if (fType != null) {
+            result.rejectValue("name", "nameExist", "分类已经存在");
+        }
+
+        if (result.hasErrors()) {
+            return "admin/type-input";
+        }
+
+        Type sType = typeService.updateType(id, type);
+        if (sType == null) {
+            attributes.addFlashAttribute("errMessage", "更新失败");
+        } else {
+            attributes.addFlashAttribute("succMessage", "更新成功");
+        }
+        return "redirect:/admin/type";
+    }
+
+    @GetMapping("/type/{id}/delete")
+    public String delete(@PathVariable Long id, RedirectAttributes attributes) {
+        typeService.deleteType(id);
+        attributes.addFlashAttribute("succMessage", "删除成功");
+        return "redirect:/admin/type";
+    }
 }

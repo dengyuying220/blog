@@ -42,8 +42,8 @@
 <div class="ui attached pointing menu container">
     <div class="ui container">
         <div class="right menu">
-            <a href="#" class="item">发布</a>
-            <a href="#" class="active teal item">列表</a>
+            <a th:href="@{/admin/type/input}" class="item">发布</a>
+            <a th:href="@{/admin/type}" class="active teal item">列表</a>
         </div>
     </div>
 </div>
@@ -75,7 +75,7 @@
                 <td th:text="${type.name}">刻意练习清单</td>
                 <td>
                     <a href="#" th:href="@{/admin/type/{id}/input(id=${type.id})}" class="ui mini teal button">编辑</a>
-                    <a href="#" class="ui mini red button">删除</a>
+                    <a href="#" th:href="@{/admin/type/{id}/delete(id=${type.id})}" class="ui mini red button">删除</a>
                 </td>
             </tr>
             </tbody>
@@ -88,7 +88,7 @@
                         </div>
                         <div class="twelve wide column">
                             <div class="ui right floated pagination mini menu">
-                                <a th:href="@{/admin/type/(page=${page.getNumber() - 4})}"
+                                <a th:href="@{/admin/type/(page=${page.getNumber() - 4 >= 0 ? page.getNumber() - 4 : 0})}"
                                    th:unless="${page.isFirst()}"
                                    th:classappend="${page.getNumber()==1} ? 'disabled'" class="icon item ">
                                     <i class="left chevron icon"></i>
