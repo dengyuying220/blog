@@ -50,13 +50,13 @@ public class BlogServiceImpl implements BlogService {
                                               if(!("".equals(blog.getTitle()) && blog.getTitle() != null)) {
                                                   predicateList.add(cb.like(root.<String>get("title"), "%" + blog.getTitle() + "%"));
                                               }
-                                              if (!(blog.getType().getId() != null)) {
+                                              if (blog.getType() != null && blog.getType().getId() != null) {
                                                   predicateList.add(cb.equal(root.<Type>get("type"), blog.getType().getId()));
                                               }
                                               if (blog.isRecommend()) {
                                                   predicateList.add(cb.equal(root.<Boolean>get("recommend"), blog.isRecommend()));
                                               }
-                                              cq.where(predicateList.toArray(new Predicate[predicateList.size()]));
+                                               cq.where(predicateList.toArray(new Predicate[predicateList.size()]));
 
                                               return null;
                                           }

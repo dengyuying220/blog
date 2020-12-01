@@ -4,6 +4,8 @@ import com.deng.blog.po.Type;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
+
 /**
  * created by deng on 2020-11-25
  **/
@@ -16,6 +18,8 @@ public interface TypeService {
     Type getTypeByName(String name);
 
     Page<Type> listType(Pageable pageable);
+
+    List<Type> listType();
 
     Type updateType(Long id, Type type);
 
