@@ -27,4 +27,11 @@ public class BlogController {
         model.addAttribute("page", blogService.listBlog(pageable, blog));
         return "admin/blog";
     }
+
+    @GetMapping("/blog/search")
+    public String search(@PageableDefault(size = 2, sort = "updateTime", direction = Sort.Direction.DESC) Pageable pageable,
+                       Blog blog, Model model) {
+        model.addAttribute("page", blogService.listBlog(pageable, blog));
+        return "admin/blog :: blogList";
+    }
 }

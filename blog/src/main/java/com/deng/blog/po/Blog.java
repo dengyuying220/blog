@@ -23,7 +23,7 @@ public class Blog {
     private boolean isShare;
     private boolean commentable;
     private boolean isPublish;
-    private boolean recomend;
+    private boolean recommend;
     private Date createTime;
     private Date updateTime;
 
@@ -119,12 +119,12 @@ public class Blog {
         isPublish = publish;
     }
 
-    public boolean isRecomend() {
-        return recomend;
+    public boolean isRecommend() {
+        return recommend;
     }
 
-    public void setRecomend(boolean recomend) {
-        this.recomend = recomend;
+    public void setRecommend(boolean recommend) {
+        this.recommend = recommend;
     }
 
     public Date getCreateTime() {
@@ -188,7 +188,7 @@ public class Blog {
                 ", isShare=" + isShare +
                 ", commentable=" + commentable +
                 ", isPublish=" + isPublish +
-                ", recomend=" + recomend +
+                ", recomend=" + recommend +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
                 '}';

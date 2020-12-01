@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
   <head th:replace="admin/_fragment :: head(~{::title})">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -52,6 +52,7 @@
     <div class="m-padded-tb-big m-container-small">
       <div class="ui container">
         <form action="" class="ui secondary segment form">
+          <input type="hidden" name="page" />
           <div class="fields">
             <div class="field">
               <input type="text" name="title" placeholder="标题"/>
@@ -60,7 +61,7 @@
               <div class="ui selection dropdown">
                 <div class="default text">分类</div>
                 <i class="dropdown icon"></i>
-                <input type="hidden" name="type"/>
+                <input type="hidden" name="typeId"/>
                 <div class="menu">
                   <div class="item" data-value="1">错误日志</div>
                   <div class="item" data-value="2">开发者手册</div>
@@ -74,14 +75,14 @@
               </div>
             </div>
             <div class="field" style="display: flex; align-items: center">
-              <button class="ui teal basic mini button">
+              <button type="button" id="searchBtn" class="ui teal basic mini button">
                 <i class="search icon"></i>搜索
               </button>
             </div>
           </div>
         </form>
 
-        <table class="ui teal compact table">
+        <table id="table-Container" th:fragment="blogList" class="ui teal compact table">
           <thead>
             <tr>
               <th></th>
@@ -93,37 +94,15 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td data-label="Age">1</td>
-              <td>刻意练习清单</td>
-              <td>认知升级</td>
-              <td>是</td>
-              <td>2020/10/27 14:24</td>
+            <tr th:each="blog, iterState : ${page.content}">
+              <td th:text="${iterSate.count}">1</td>
+              <td th:text="${blog.title}">刻意练习清单</td>
+              <td th:text="${blog.type.name}">认知升级</td>
+              <td th:text="${blog.recommend ? '是' : '否'}">是</td>
+              <td th:text="${blog.updateTime}">2020/10/27 14:24</td>
               <td>
-                <a href="#" class="ui mini teal button">编辑</a>
-                <a href="#" class="ui mini red button">删除</a>
-              </td>
-            </tr>
-            <tr>
-              <td data-label="Age">1</td>
-              <td>刻意练习清单</td>
-              <td>认知升级</td>
-              <td>是</td>
-              <td>2020/10/27 14:24</td>
-              <td>
-                <a href="#" class="ui mini teal button">编辑</a>
-                <a href="#" class="ui mini red button">删除</a>
-              </td>
-            </tr>
-            <tr>
-              <td data-label="Age">1</td>
-              <td>刻意练习清单</td>
-              <td>认知升级</td>
-              <td>是</td>
-              <td>2020/10/27 14:24</td>
-              <td>
-                <a href="#" class="ui mini teal button">编辑</a>
-                <a href="#" class="ui mini red button">删除</a>
+                <a href="#" th:href="@{/admin/blog/{id}/input(id=${blog.id})}" class="ui mini teal button">编辑</a>
+                <a href="#" th:href="@{/admin/blog/{id}/delete(id=${blog.id})}" class="ui mini red button">删除</a>
               </td>
             </tr>
           </tbody>
@@ -132,17 +111,17 @@
               <th colspan="6">
                 <div class="ui middle aligned grid">
                   <div class="four wide column">
-                    <div class="ui mini teal basic button item">新增</div>
+                    <a th:href="@{/admin/blog/input}" class="ui mini teal basic button item">新增</a>
                   </div>
                   <div class="twelve wide column">
                     <div class="ui right floated pagination mini menu">
                       <a class="icon item">
                         <i class="left chevron icon"></i>
                       </a>
-                      <a hr class="item">1</a>
-                      <a class="item">2</a>
-                      <a class="item">3</a>
-                      <a class="item">4</a>
+                      <a class="item" onclick="page(this)" th:attr="data-page=${page.getNumber() + index - 1}"
+                         th:if="${page.getNumber() + index <= page.getTotalPages()}"
+                         th:each="index:${#numbers.sequence(1, 4)}" th:text="${page.getNumber() + index}">1
+                      </a>
                       <a class="icon item">
                         <i class="right chevron icon"></i>
                       </a>
@@ -208,6 +187,21 @@
         $(".m-item").toggleClass("m-mobile-hide");
       });
       $(".ui.dropdown").dropdown();
+      function page(obj) {
+        $("[name='page']").val($(obj).data("page"));
+        loadData();
+      }
+      $("#searchBtn").click(function() {
+        loadData();
+      });
+      function loadData() {
+        $("#table-Container").load(/*[[@{/admin/blog/search}]]*/"/admin/blog/search", {
+          title : $("[name='title']").val(),
+          typeId : $("[name='typeId']").val(),
+          recommend : $("[name='recommend']").val(),
+          page : $("[name='page']").val()
+        })
+      }
     </script>
   </body>
 </html>
