@@ -13,7 +13,7 @@
 
   <body>
     <!-- 导航 -->
-    <nav class="ui inverted segment attached m-shadow-small">
+    <nav th:replace="admin/_fragment :: menu(3)" class="ui inverted segment attached m-shadow-small">
       <div class="ui container">
         <div class="ui inverted secondary stackable menu">
           <h2 class="ui teal header item m-padded-tb-mini">管理后台</h2>
@@ -73,7 +73,8 @@
     <!-- 中间内容 -->
     <div class="m-padded-tb-big m-container-small">
       <div class="ui container">
-        <form action="" class="ui form">
+        <form action="@{/admin/blog}" method="post" class="ui form">
+          <input type="hidden" name="isPublish" />
           <div class="required field">
             <div class="ui labeled input">
               <div class="ui compact teal basic selection dropdown label">
@@ -90,7 +91,7 @@
             </div>
           </div>
           <div class="field">
-            <div id="test-editormd" style="z-index: 1 !important">
+            <div id="content-editormd" style="z-index: 1 !important">
               <textarea style="display: none">
 [TOC]
 
@@ -134,11 +135,10 @@
                 <label class="ui teal basic label">分类</label>
                 <div class="ui selection fluid dropdown">
                   <i class="dropdown icon"></i>
-                  <input type="hidden" value="" name="type" />
+                  <input type="hidden" value="" name="typeId" />
                   <div class="text">分类</div>
                   <div class="menu">
-                    <div class="item" data-value="1">错误日志</div>
-                    <div class="item" data-value="2">开发者手册</div>
+                    <div class="item" th:each="type : ${types}" th:data-value="${type.id}" th:text="${type.name}">错误日志</div>
                   </div>
                 </div>
               </div>
@@ -148,11 +148,10 @@
                 <label class="ui teal basic label">标签</label>
                 <div class="ui selection multiple search fluid dropdown">
                   <i class="dropdown icon"></i>
-                  <input type="hidden" value="" name="tag" />
+                  <input type="hidden" value="" name="tagIds" />
                   <div class="text">标签</div>
                   <div class="menu">
-                    <div class="item" data-value="1">java</div>
-                    <div class="item" data-value="2">javascript</div>
+                    <div class="item" th:each="tag : ${tags}" th:data-value="${tag.id}" th:text="${tag.name}">java</div>
                   </div>
                 </div>
               </div>
@@ -161,7 +160,7 @@
           <div class="field">
             <div class="ui labeled input">
               <label class="ui teal basic label">首图</label>
-              <input type="text" name="indexPicture" placeholder="首图地址" />
+              <input type="text" name="firstPicture" placeholder="首图地址" />
             </div>
           </div>
           <div class="inline fields">
@@ -179,8 +178,8 @@
             </div>
             <div class="field">
               <div class="ui checkbox">
-                <input type="checkbox" class="hidden" name="copy" id="copy" />
-                <label for="copy">转载</label>
+                <input type="checkbox" class="hidden" name="isShare" id="isShare" />
+                <label for="isShare">转载</label>
               </div>
             </div>
             <div class="field">
@@ -188,10 +187,10 @@
                 <input
                   type="checkbox"
                   class="hidden"
-                  name="appreciate"
-                  id="appreciate"
+                  name="isAppreciation"
+                  id="isAppreciation"
                 />
-                <label for="appreciate">赞赏</label>
+                <label for="isAppreciation">赞赏</label>
               </div>
             </div>
             <div class="field">
@@ -199,10 +198,10 @@
                 <input
                   type="checkbox"
                   class="hidden"
-                  name="comment"
-                  id="comment"
+                  name="commentable"
+                  id="commentable"
                 />
-                <label for="comment">评论</label>
+                <label for="commentable">评论</label>
               </div>
             </div>
           </div>
@@ -276,11 +275,11 @@
       </div>
     </footer>
 
-    <!--/*<th:block th:replace="admin/_fragment :: script">*/-->
+<th:block th:replace="admin/_fragment :: script">
       <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-      <script src="../../static/lib/editormd/editormd.min.js" th:src="@{/lib/editormd/editormd.min.js}"></script>
-    <!--/*</th:block>*/-->
+      <script src="../../static/lib/editormd/editormd.js"></script>
+</th:block>
     <script>
       $(".m-toggle").click(function () {
         $(".m-item").toggleClass("m-mobile-hide");
@@ -298,7 +297,7 @@
             ],
           },
           type: {
-            identifier: "type",
+            identifier: "typeId",
             rules: [
               {
                 type: "empty",
@@ -309,16 +308,14 @@
         },
       });
     </script>
-    <!--/*<script src="../../static/lib/editormd/editormd.min.js"></script>*/-->
     <script type="text/javascript">
-      var testEditor;
-
+      var contentEditor;
       $(function () {
-        testEditor = editormd("test-editormd", {
+        contentEditor = editormd("content-editormd", {
           width: "100%",
           height: 640,
           syncScrolling: "single",
-          path: "@{/lib/editormd/lib/}",
+          path: "/lib/editormd/lib/",
         });
       });
     </script>

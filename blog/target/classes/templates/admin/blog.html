@@ -63,7 +63,7 @@
                 <i class="dropdown icon"></i>
                 <input type="hidden" name="typeId"/>
                 <div class="menu">
-                  <div th:each="type : ${type}" class="item" th:data-value="${type}" th:text="${type.name}">错误日志</div>
+                  <div th:each="type : ${types}" class="item" th:data-value="${type.id}" th:text="${type.name}">错误日志</div>
                   <!--/*<div class="item" data-value="2">开发者手册</div>*/-->
                 </div>
               </div>
@@ -115,15 +115,17 @@
                   </div>
                   <div class="twelve wide column">
                     <div class="ui right floated pagination mini menu">
-                      <a class="icon item">
-                        <i class="left chevron icon"></i>
+                      <a class="icon item" onclick="page(this)" th:attr="data-page=${page.getNumber() - 1}"
+                         th:unless="${page.isFirst()}">
+                        上一页
                       </a>
-                      <a class="item" onclick="page(this)" th:attr="data-page=${page.getNumber() + index - 1}"
+<!--                      <a class="item" onclick="page(this)" th:attr="data-page=${page.getNumber() + index - 1}"
                          th:if="${page.getNumber() + index <= page.getTotalPages()}"
                          th:each="index:${#numbers.sequence(1, 4)}" th:text="${page.getNumber() + index}">1
-                      </a>
-                      <a class="icon item">
-                        <i class="right chevron icon"></i>
+                      </a>-->
+                      <a class="icon item" onclick="page(this)" th:attr="data-page=${page.getNumber() + 1}"
+                         th:unless="${page.isLast()}">
+                        下一页
                       </a>
                     </div>
                   </div>

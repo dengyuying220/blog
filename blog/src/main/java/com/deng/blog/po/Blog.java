@@ -19,11 +19,11 @@ public class Blog {
     private String firstPicture;
     private String flag;
     private Integer views;
-    private boolean isAppreciation;
-    private boolean isShare;
-    private boolean commentable;
-    private boolean isPublish;
-    private boolean recommend;
+    private boolean isAppreciation; //打赏
+    private boolean isShare;    //转载
+    private boolean commentable;    //评论
+    private boolean isPublish;  //发布
+    private boolean recommend;  //推荐
     private Date createTime;
     private Date updateTime;
 

@@ -33,6 +33,7 @@ public class TypeServiceImpl implements TypeService {
         return typeRepository.getOne(id);
     }
 
+    @Transactional
     @Override
     public Type getTypeByName(String name) {
         return typeRepository.findByName(name);
@@ -44,6 +45,7 @@ public class TypeServiceImpl implements TypeService {
         return typeRepository.findAll(pageable);
     }
 
+    @Transactional
     @Override
     public List<Type> listType() {
         return typeRepository.findAll();
