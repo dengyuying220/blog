@@ -15,6 +15,9 @@ public class Blog {
     @GeneratedValue
     private Long id;
     private String title;
+
+    @Basic(fetch = FetchType.LAZY)
+    @Lob
     private String content;
     private String firstPicture;
     private String flag;
@@ -26,6 +29,9 @@ public class Blog {
     private boolean recommend;  //推荐
     private Date createTime;
     private Date updateTime;
+
+    @Transient
+    private String tagIds;
 
     @ManyToOne
     private Type type;
@@ -173,6 +179,14 @@ public class Blog {
 
     public void setCommentLst(List<Comment> commentLst) {
         this.commentLst = commentLst;
+    }
+
+    public String getTagIds() {
+        return tagIds;
+    }
+
+    public void setTagIds(String tagIds) {
+        this.tagIds = tagIds;
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.deng.blog.web.admin;
 
 import com.deng.blog.po.Blog;
+import com.deng.blog.po.User;
 import com.deng.blog.service.BlogService;
 import com.deng.blog.service.TagService;
 import com.deng.blog.service.TypeService;
@@ -13,6 +14,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * created by deng on 2020-11-24
@@ -57,8 +61,16 @@ public class BlogController {
     }
 
     @PostMapping("/blog")
-    public String post() {
-
+    public String post(Blog blog, RedirectAttributes attributes, HttpSession session) {
+        blog.setUser((User) session.getAttribute("user"));
+        blog.setType(typeService.getType(blog.getType().getId()));
+        blog.setTagLst(tagService.listTag(blog.getTagIds()));
+        Blog blog1 = blogService.saveBlog(blog);
+        if (blog1 == null) {
+            attributes.addFlashAttribute("errMessage", "操作失败");
+        } else {
+            attributes.addFlashAttribute("succMessage", "操作成功");
+        }
         return REDIRECT_LIST;
     }
 }

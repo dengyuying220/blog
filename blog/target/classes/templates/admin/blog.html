@@ -51,6 +51,16 @@
     <!-- 中间内容 -->
     <div class="m-padded-tb-big m-container-small">
       <div class="ui container">
+        <div class="ui success message" th:unless="${#strings.isEmpty(succMessage)}">
+          <i class="close icon"></i>
+          <div class="header">提示：</div>
+          <p th:text="${succMessage}">恭喜，操作成功</p>
+        </div>
+        <div class="ui error message" th:unless="${#strings.isEmpty(errMessage)}">
+          <i class="close icon"></i>
+          <div class="header">提示：</div>
+          <p th:text="${errMessage}">操作失败</p>
+        </div>
         <form action="" class="ui secondary segment form">
           <input type="hidden" name="page" />
           <div class="fields">
@@ -204,6 +214,13 @@
           page : $("[name='page']").val()
         })
       }
+      <!--关闭提示-->
+      $(".message .close")
+        .on("click", function () {
+            $(this)
+                .closest(".message")
+                .transition("fade");
+      });
     </script>
   </body>
 </html>
