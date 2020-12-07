@@ -22,10 +22,10 @@ public class Blog {
     private String firstPicture;
     private String flag;
     private Integer views;
-    private boolean isAppreciation; //打赏
-    private boolean isShare;    //转载
+    private boolean appreciation; //打赏
+    private boolean share;    //转载
     private boolean commentable;    //评论
-    private boolean isPublish;  //发布
+    private boolean publish;  //发布
     private boolean recommend;  //推荐
     private Date createTime;
     private Date updateTime;
@@ -93,46 +93,6 @@ public class Blog {
         this.views = views;
     }
 
-    public boolean isAppreciation() {
-        return isAppreciation;
-    }
-
-    public void setAppreciation(boolean appreciation) {
-        isAppreciation = appreciation;
-    }
-
-    public boolean isShare() {
-        return isShare;
-    }
-
-    public void setShare(boolean share) {
-        isShare = share;
-    }
-
-    public boolean isCommentable() {
-        return commentable;
-    }
-
-    public void setCommentable(boolean commentable) {
-        this.commentable = commentable;
-    }
-
-    public boolean isPublish() {
-        return isPublish;
-    }
-
-    public void setPublish(boolean publish) {
-        isPublish = publish;
-    }
-
-    public boolean isRecommend() {
-        return recommend;
-    }
-
-    public void setRecommend(boolean recommend) {
-        this.recommend = recommend;
-    }
-
     public Date getCreateTime() {
         return createTime;
     }
@@ -189,6 +149,46 @@ public class Blog {
         this.tagIds = tagIds;
     }
 
+    public boolean isAppreciation() {
+        return appreciation;
+    }
+
+    public void setAppreciation(boolean appreciation) {
+        this.appreciation = appreciation;
+    }
+
+    public boolean isShare() {
+        return share;
+    }
+
+    public void setShare(boolean share) {
+        this.share = share;
+    }
+
+    public boolean isCommentable() {
+        return commentable;
+    }
+
+    public void setCommentable(boolean commentable) {
+        this.commentable = commentable;
+    }
+
+    public boolean isPublish() {
+        return publish;
+    }
+
+    public void setPublish(boolean publish) {
+        this.publish = publish;
+    }
+
+    public boolean isRecommend() {
+        return recommend;
+    }
+
+    public void setRecommend(boolean recommend) {
+        this.recommend = recommend;
+    }
+
     @Override
     public String toString() {
         return "Blog{" +
@@ -198,13 +198,18 @@ public class Blog {
                 ", firstPicture='" + firstPicture + '\'' +
                 ", flag='" + flag + '\'' +
                 ", views=" + views +
-                ", isAppreciation=" + isAppreciation +
-                ", isShare=" + isShare +
+                ", appreciation=" + appreciation +
+                ", share=" + share +
                 ", commentable=" + commentable +
-                ", isPublish=" + isPublish +
-                ", recomend=" + recommend +
+                ", publish=" + publish +
+                ", recommend=" + recommend +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
+                ", tagIds='" + tagIds + '\'' +
+                ", type=" + type +
+                ", tagLst=" + tagLst +
+                ", user=" + user +
+                ", commentLst=" + commentLst +
                 '}';
     }
 }

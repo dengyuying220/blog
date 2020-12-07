@@ -73,8 +73,8 @@
     <!-- 中间内容 -->
     <div class="m-padded-tb-big m-container-small">
       <div class="ui container">
-        <form th:action="@{/admin/blog}" method="post" class="ui form">
-          <input type="hidden" name="isPublish" />
+        <form id="blogForm" th:action="@{/admin/blog}" method="post" class="ui form">
+          <input type="hidden" name="publish" />
           <div class="required field">
             <div class="ui labeled input">
               <div class="ui compact teal basic selection dropdown label">
@@ -92,7 +92,7 @@
           </div>
           <div class="field">
             <div id="content-editormd" style="z-index: 1 !important">
-              <textarea style="display: none">
+              <textarea name="content" placeholder="博客内容" style="display: none">
 [TOC]
 
 #### Disabled options
@@ -125,8 +125,7 @@
 &lt;!-- 繁體中文 --&gt;
 &lt;script src="../dist/js/languages/zh-tw.js"&gt;&lt;/script&gt;
 ```
-</textarea
-              >
+</textarea>
             </div>
           </div>
           <div class="two fields">
@@ -178,8 +177,8 @@
             </div>
             <div class="field">
               <div class="ui checkbox">
-                <input type="checkbox" class="hidden" name="isShare" id="isShare" />
-                <label for="isShare">转载</label>
+                <input type="checkbox" class="hidden" name="share" id="share" />
+                <label for="share">转载</label>
               </div>
             </div>
             <div class="field">
@@ -187,10 +186,10 @@
                 <input
                   type="checkbox"
                   class="hidden"
-                  name="isAppreciation"
-                  id="isAppreciation"
+                  name="appreciation"
+                  id="appreciation"
                 />
-                <label for="isAppreciation">赞赏</label>
+                <label for="appreciation">赞赏</label>
               </div>
             </div>
             <div class="field">
@@ -207,11 +206,9 @@
           </div>
           <div class="ui error message"></div>
           <div class="ui right aligned container">
-            <button class="ui button" onclick="window.history.go(-1)">
-              返回
-            </button>
-            <button class="ui secondary button">保存</button>
-            <button class="ui teal submit button">发布</button>
+            <button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
+            <button id="saveBtn" type="button" class="ui secondary button">保存</button>
+            <button id="publishBtn" type="button" class="ui teal button">发布</button>
           </div>
         </form>
       </div>
@@ -297,7 +294,7 @@
             ],
           },
           type: {
-            identifier: "typeId",
+            identifier: "type.id",
             rules: [
               {
                 type: "empty",
@@ -306,6 +303,16 @@
             ],
           },
         },
+      });
+      <!--保存-->
+      $("#saveBtn").click(function() {
+        $("[name=publish]").val(false);
+        $("#blogForm").submit();
+      });
+      <!--发布-->
+      $("#publishBtn").click(function() {
+        $("[name=publish]").val(true);
+        $("#blogForm").submit();
       });
     </script>
     <script type="text/javascript">
