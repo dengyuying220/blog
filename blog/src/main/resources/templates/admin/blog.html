@@ -104,8 +104,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr th:each="blog, iterState : ${page.content}">
-              <td th:text="${iterSate.count}">1</td>
+            <tr th:each="blog, iterStat: ${page.content}">
+              <td th:text="${iterStat.count}">1</td>
               <td th:text="${blog.title}">刻意练习清单</td>
               <td th:text="${blog.type.name}">认知升级</td>
               <td th:text="${blog.recommend ? '是' : '否'}">是</td>

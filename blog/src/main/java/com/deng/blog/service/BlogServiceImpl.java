@@ -51,7 +51,7 @@ public class BlogServiceImpl implements BlogService {
                                           @Override
                                           public Predicate toPredicate(Root<Blog> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
                                               List<Predicate> predicateList = new ArrayList<>();
-                                              if(!("".equals(blog.getTitle()) && blog.getTitle() != null)) {
+                                              if(!("".equals(blog.getTitle())) && blog.getTitle() != null) {
                                                   predicateList.add(cb.like(root.<String>get("title"), "%" + blog.getTitle() + "%"));
                                               }
                                               if (blog.getType() != null && blog.getType().getId() != null) {
