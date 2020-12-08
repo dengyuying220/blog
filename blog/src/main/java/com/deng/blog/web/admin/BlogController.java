@@ -1,6 +1,7 @@
 package com.deng.blog.web.admin;
 
 import com.deng.blog.po.Blog;
+import com.deng.blog.po.Type;
 import com.deng.blog.po.User;
 import com.deng.blog.service.BlogService;
 import com.deng.blog.service.TagService;
@@ -56,14 +57,19 @@ public class BlogController {
 
     @GetMapping("/blog/input")
     public String input(Model model) {
+        Blog blog = new Blog();
+        blog.setType(new Type());
+        model.addAttribute("blog", blog);
         model.addAttribute("types", typeService.listType());
         model.addAttribute("tags", tagService.listTag());
         return INPUT;
     }
 
     @GetMapping("/blog/{id}/input")
-    public String input(@PathVariable Long id, Model model) {
-        model.addAttribute("blog", blogService.getBlog(id));
+    public String editInput(@PathVariable Long id, Model model) {
+        Blog blog = blogService.getBlog(id);
+        blog.init();
+        model.addAttribute("blog", blog);
         model.addAttribute("types", typeService.listType());
         model.addAttribute("tags", tagService.listTag());
         return INPUT;

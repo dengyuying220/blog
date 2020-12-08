@@ -149,6 +149,28 @@ public class Blog {
         this.tagIds = tagIds;
     }
 
+    public void init() {
+        this.tagIds = tagsToIds(this.getTagLst());
+    }
+//    遍历集合取对象的属性，拼接一个字符串
+    private  String tagsToIds(List<Tag> tagLst) {
+        if (!tagLst.isEmpty()) {
+            StringBuffer ids = new StringBuffer();
+            boolean flag = false;
+            for (Tag tag : tagLst) {
+                if (flag) {
+                    ids.append(",");
+                } else {
+                    flag = true;
+                }
+                ids.append(tag.getId());
+            }
+            return ids.toString();
+        } else {
+            return tagIds;
+        }
+    }
+
     public boolean isAppreciation() {
         return appreciation;
     }
