@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <input type="text" data-value="a">
+    <input type="text" data-value="b">
+    <input type="text" data-value="c">
+    <input type="text" data-value="d">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script>
+ 
+    $("[data-value]").each(function(index, element) {
+        $(this).val($(this).attr("data-value"))
+    });
+ 
+</script>
+</body>
+</html>

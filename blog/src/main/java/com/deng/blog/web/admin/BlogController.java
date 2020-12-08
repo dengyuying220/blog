@@ -12,6 +12,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -39,7 +40,7 @@ public class BlogController {
     private TagService tagService;
 
     @GetMapping("/blog")
-    public String list(@PageableDefault(size = 2, sort = "updateTime", direction = Sort.Direction.DESC) Pageable pageable,
+    public String list(@PageableDefault(size = 10, sort = "updateTime", direction = Sort.Direction.DESC) Pageable pageable,
                        Blog blog, Model model) {
         model.addAttribute("page", blogService.listBlog(pageable, blog));
         model.addAttribute("types", typeService.listType());
@@ -55,6 +56,14 @@ public class BlogController {
 
     @GetMapping("/blog/input")
     public String input(Model model) {
+        model.addAttribute("types", typeService.listType());
+        model.addAttribute("tags", tagService.listTag());
+        return INPUT;
+    }
+
+    @GetMapping("/blog/{id}/input")
+    public String input(@PathVariable Long id, Model model) {
+        model.addAttribute("blog", blogService.getBlog(id));
         model.addAttribute("types", typeService.listType());
         model.addAttribute("tags", tagService.listTag());
         return INPUT;
