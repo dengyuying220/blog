@@ -99,6 +99,7 @@
               <th>标题</th>
               <th>类型</th>
               <th>推荐</th>
+              <th>状态</th>
               <th>更新时间</th>
               <th>操作</th>
             </tr>
@@ -109,6 +110,7 @@
               <td th:text="${blog.title}">刻意练习清单</td>
               <td th:text="${blog.type.name}">认知升级</td>
               <td th:text="${blog.recommend ? '是' : '否'}">是</td>
+              <td th:text="${blog.publish ? '发布' : '草稿'}">是</td>
               <td th:text="${blog.updateTime}">2020/10/27 14:24</td>
               <td>
                 <a href="#" th:href="@{/admin/blog/{id}/input(id=${blog.id})}" class="ui mini teal button">编辑</a>
@@ -118,7 +120,7 @@
           </tbody>
           <tfoot>
             <tr>
-              <th colspan="6">
+              <th colspan="7">
                 <div class="ui middle aligned grid">
                   <div class="four wide column">
                     <a th:href="@{/admin/blog/input}" class="ui mini teal basic button item">新增</a>

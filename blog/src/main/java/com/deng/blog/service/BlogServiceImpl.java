@@ -5,6 +5,8 @@ import com.deng.blog.dao.BlogRepository;
 import com.deng.blog.po.Blog;
 import com.deng.blog.po.Type;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.BeanWrapper;
+import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,9 +18,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * created by deng on 2020-11-30
@@ -36,16 +36,18 @@ public class BlogServiceImpl implements BlogService {
             blog.setCreateTime(new Date());
             blog.setUpdateTime(new Date());
             blog.setViews(0);
+            return blogRepository.save(blog);
         } else {
             blog.setUpdateTime(new Date());
+            return updateBlog(blog.getId(), blog);
         }
-        return blogRepository.save(blog);
+
     }
 
     @Transactional
     @Override
     public Blog getBlog(Long id) {
-        return blogRepository.getOne(id);
+        return blogRepository.findById(id).get();
     }
 
     @Transactional
@@ -74,12 +76,25 @@ public class BlogServiceImpl implements BlogService {
     @Transactional
     @Override
     public Blog updateBlog(Long id, Blog blog) {
-        Blog t =blogRepository.getOne(id);
+        Blog t = getBlog(id);
         if (t == null) {
             throw new NotFoundException("不存在该博客");
         }
-        BeanUtils.copyProperties(blog, t);
+        BeanUtils.copyProperties(blog, t, getNullPropertyNames(blog));
         return blogRepository.save(t);
+    }
+
+    public static String[] getNullPropertyNames (Object source) {
+        final BeanWrapper src = new BeanWrapperImpl(source);
+        java.beans.PropertyDescriptor[] pds = src.getPropertyDescriptors();
+
+        Set<String> emptyNames = new HashSet<String>();
+        for(java.beans.PropertyDescriptor pd : pds) {
+            Object srcValue = src.getPropertyValue(pd.getName());
+            if (srcValue == null) emptyNames.add(pd.getName());
+        }
+        String[] result = new String[emptyNames.size()];
+        return emptyNames.toArray(result);
     }
 
     @Transactional
