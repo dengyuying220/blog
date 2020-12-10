@@ -80,7 +80,7 @@
             </div>
             <div class="field" style="display: flex; align-items: center">
               <div class="ui checkbox">
-                <input type="checkbox" name="recommend" id="recommend" class="hidden"/>
+                <input type="checkbox" name="recommend" id="recommend" />
                 <label for="recommend">推荐</label>
               </div>
             </div>
@@ -212,7 +212,7 @@
         $("#table-Container").load(/*[[@{/admin/blog/search}]]*/"/admin/blog/search", {
           title : $("[name='title']").val(),
           typeId : $("[name='typeId']").val(),
-          recommend : $("[name='recommend']").val(),
+          recommend : $("[name='recommend']").prop("checked"),
           page : $("[name='page']").val()
         })
       }

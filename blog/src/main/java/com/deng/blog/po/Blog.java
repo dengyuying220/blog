@@ -32,6 +32,8 @@ public class Blog {
 
     @Transient
     private String tagIds;
+    @Transient
+    private String typeId;
 
     @ManyToOne
     private Type type;
@@ -147,6 +149,14 @@ public class Blog {
 
     public void setTagIds(String tagIds) {
         this.tagIds = tagIds;
+    }
+
+    public String getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(String typeId) {
+        this.typeId = typeId;
     }
 
     public void init() {

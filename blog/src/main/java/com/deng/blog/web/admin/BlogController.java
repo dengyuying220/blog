@@ -41,7 +41,7 @@ public class BlogController {
     private TagService tagService;
 
     @GetMapping("/blog")
-    public String list(@PageableDefault(size = 10, sort = "updateTime", direction = Sort.Direction.DESC) Pageable pageable,
+    public String list(@PageableDefault(sort = "updateTime", direction = Sort.Direction.DESC) Pageable pageable,
                        Blog blog, Model model) {
         model.addAttribute("page", blogService.listBlog(pageable, blog));
         model.addAttribute("types", typeService.listType());
@@ -49,8 +49,9 @@ public class BlogController {
     }
 
     @PostMapping("/blog/search")
-    public String search(@PageableDefault(size = 2, sort = "updateTime", direction = Sort.Direction.DESC) Pageable pageable,
+    public String search(@PageableDefault(sort = "updateTime", direction = Sort.Direction.DESC) Pageable pageable,
                        Blog blog, Model model) {
+        blog.setType(typeService.getType(Long.valueOf(blog.getTypeId())));
         model.addAttribute("page", blogService.listBlog(pageable, blog));
         return "admin/blog :: blogList";
     }
@@ -86,6 +87,13 @@ public class BlogController {
         } else {
             attributes.addFlashAttribute("succMessage", "操作成功");
         }
+        return REDIRECT_LIST;
+    }
+
+    @GetMapping("/blog/{id}/delete")
+    public  String delete(@PathVariable Long id, RedirectAttributes attributes) {
+        blogService.deleteBlog(id);
+        attributes.addFlashAttribute("succMessage", "删除成功");
         return REDIRECT_LIST;
     }
 }
