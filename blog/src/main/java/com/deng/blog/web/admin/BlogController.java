@@ -51,7 +51,9 @@ public class BlogController {
     @PostMapping("/blog/search")
     public String search(@PageableDefault(sort = "updateTime", direction = Sort.Direction.DESC) Pageable pageable,
                        Blog blog, Model model) {
-        blog.setType(typeService.getType(Long.valueOf(blog.getTypeId())));
+        if (blog.getTypeId()!= null && !blog.getTypeId().isEmpty()) {
+            blog.setType(typeService.getType(Long.valueOf(blog.getTypeId())));
+        }
         model.addAttribute("page", blogService.listBlog(pageable, blog));
         return "admin/blog :: blogList";
     }

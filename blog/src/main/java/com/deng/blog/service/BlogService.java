@@ -15,6 +15,8 @@ public interface BlogService {
 
     Page<Blog> listBlog(Pageable pageable, Blog blog);
 
+    Page<Blog> listBlog(Pageable pageable);
+
     Blog updateBlog(Long id, Blog blog);
 
     void deleteBlog(Long id);

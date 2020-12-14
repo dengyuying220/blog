@@ -6,7 +6,9 @@ import com.deng.blog.po.Type;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -49,6 +51,14 @@ public class TypeServiceImpl implements TypeService {
     @Override
     public List<Type> listType() {
         return typeRepository.findAll();
+    }
+
+    @Transactional
+    @Override
+    public List<Type> listType(Integer size) {
+        Sort sort = Sort.by(Sort.Direction.DESC, "blog.size");
+        Pageable pageable = PageRequest.of(0, size, sort);
+        return typeRepository.findTop(pageable);
     }
 
     @Transactional

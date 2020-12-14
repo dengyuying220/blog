@@ -6,7 +6,9 @@ import com.deng.blog.po.Tag;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -49,6 +51,14 @@ public class TagServiceImpl implements TagService {
     @Override
     public List<Tag> listTag() {
         return tagRepository.findAll();
+    }
+
+    @Transactional
+    @Override
+    public List<Tag> listTag(Integer size) {
+        Sort sort = Sort.by(Sort.Direction.DESC, "blog.size");
+        Pageable pageable = PageRequest.of(0, size, sort);
+        return tagRepository.findTop(pageable);
     }
 
     @Transactional

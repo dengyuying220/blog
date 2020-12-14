@@ -19,6 +19,7 @@ public class Blog {
     @Basic(fetch = FetchType.LAZY)
     @Lob
     private String content;
+    private String description;
     private String firstPicture;
     private String flag;
     private Integer views;
@@ -69,6 +70,14 @@ public class Blog {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getFirstPicture() {
