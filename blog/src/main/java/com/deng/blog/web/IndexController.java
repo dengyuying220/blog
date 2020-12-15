@@ -33,10 +33,11 @@ public class IndexController {
         model.addAttribute("page", blogService.listBlog(pageable));
         model.addAttribute("types", typeService.listType(6));
         model.addAttribute("tags",tagService.listTag(10));
+        model.addAttribute("recommendBlog", blogService.listRecommendBlog(8));
         return "index";
     }
 
-    @GetMapping("/blog")
+    @GetMapping("/blog/{id}")
     public String blog(/*@PathVariable Integer id, @PathVariable String name*/) {
         System.out.println("--------------blog--------------");
         return "blog";

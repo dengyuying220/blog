@@ -61,7 +61,7 @@
                 </div>
                 <div class="right aligned column">
                   共
-                  <h2 class="ui header orange m-inline-block m-font-thin">
+                  <h2 class="ui header orange m-inline-block m-font-thin" th:text="${page.totalElements}">
                     14
                   </h2>
                   篇
@@ -72,10 +72,15 @@
             <!-- content -->
             <div class="ui attached segment">
               <div class="ui m-mobile-lr-clear vertical segment m-padded-tb-large">
-                <div class="ui middle aligned stackable mobile reversed grid">
+                <div class="ui middle aligned stackable mobile reversed grid" th:each="blog : ${page.content}">
                   <div class="eleven wide column">
-                    <h3 class="ui header">图标文字在产品环境下无法正常显示</h3>
-                    <p class="m-text">
+                    <h3 class="ui header">
+                      <a href="#" class="m-black" th:text="${blog.title}" target="_blank"
+                         th:href="@{/blog/{id}(id=${blog.id})}">
+                        图标文字在产品环境下无法正常显示
+                      </a>
+                    </h3>
+                    <p class="m-text" th:text="|${blog.description}......|">
                       我也试了调整这两个配置项的值 config.assets.compile = true
                       config.assets.digest = true
                       还是没能解决问题。最后我只能手动将这些文件命中的
@@ -86,26 +91,27 @@
                         <div class="ui horizontal mini list">
                           <div class="item">
                             <img
-                              src="https://picsum.photos/seed/picsum/100/100"
+                              src="https://picsum.photos/seed/picsum/100/100" th:src="${blog.user.avatar}"
                               alt=""
                               class="ui avatar image"
                             />
                             <div class="content">
-                              <a href="#" class="header">李密仁</a>
+                              <a href="#" class="header" th:text="${blog.user.nickname}">李密仁</a>
                             </div>
                           </div>
                           <div class="item">
                             <i class="calendar grey disabled icon"></i>
-                            2020-10-14
+                            <span th:text="${#dates.format(blog.updateTime, 'yyyy-MM-dd')}">2020-10-14</span>
                           </div>
                           <div class="item">
-                            <i class="eye disabled icon grey"></i> 2546
+                            <i class="eye disabled icon grey"></i>
+                            <span th:text="${blog.views}">2020-10-14</span>
                           </div>
                         </div>
                       </div>
                       <div class="right aligned five wide column">
                         <a
-                          href=""
+                          href="" th:text="${blog.type.name}"
                           class="ui label basic teal m-padded-tiny m-font-thin"
                           >认知升级</a
                         >
@@ -113,9 +119,9 @@
                     </div>
                   </div>
                   <div class="five wide column">
-                    <a href="#" target="_blank">
+                    <a  href="#" target="_blank" th:href="@{/blog/{id}(id=${blog.id})}">
                       <img
-                        src="https://picsum.photos/seed/picsum/800/450"
+                        src="https://picsum.photos/seed/picsum/800/450" th:src="${blog.firstPicture}"
                         alt=""
                         class="ui rounded image"
                       />
@@ -124,179 +130,17 @@
                 </div>
               </div>
 
-              <div
-                class="ui m-mobile-lr-clear vertical segment m-padded-tb-large"
-              >
-                <div class="ui stackable mobile reversed grid">
-                  <div class="eleven wide column">
-                    <h3 class="ui header">图标文字在产品环境下无法正常显示</h3>
-                    <p class="m-text">
-                      我也试了调整这两个配置项的值 config.assets.compile = true
-                      config.assets.digest = true
-                      还是没能解决问题。最后我只能手动将这些文件命中的
-                      指纹值去掉， 问题算是解决了。 但是，这个问题不算是...
-                    </p>
-                    <div class="ui stackable grid">
-                      <div class="eleven wide column">
-                        <div class="ui horizontal mini list">
-                          <div class="item">
-                            <img
-                              src="https://picsum.photos/seed/picsum/100/100"
-                              alt=""
-                              class="ui avatar image"
-                            />
-                            <div class="content">
-                              <a href="#" class="header">李密仁</a>
-                            </div>
-                          </div>
-                          <div class="item">
-                            <i class="calendar grey disabled icon"></i>
-                            2020-10-14
-                          </div>
-                          <div class="item">
-                            <i class="eye disabled icon grey"></i> 2546
-                          </div>
-                        </div>
-                      </div>
-                      <div class="right aligned five wide column">
-                        <a
-                          href=""
-                          class="ui label basic teal m-padded-tiny m-font-thin"
-                          >认知升级</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="five wide column">
-                    <a href="#" target="_blank">
-                      <img
-                        src="https://picsum.photos/seed/picsum/800/450"
-                        alt=""
-                        class="ui rounded image"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
 
-              <div
-                class="ui m-mobile-lr-clear vertical segment m-padded-tb-large"
-              >
-                <div class="ui stackable mobile reversed grid">
-                  <div class="eleven wide column">
-                    <h3 class="ui header">图标文字在产品环境下无法正常显示</h3>
-                    <p class="m-text">
-                      我也试了调整这两个配置项的值 config.assets.compile = true
-                      config.assets.digest = true
-                      还是没能解决问题。最后我只能手动将这些文件命中的
-                      指纹值去掉， 问题算是解决了。 但是，这个问题不算是...
-                    </p>
-                    <div class="ui stackable grid">
-                      <div class="eleven wide column">
-                        <div class="ui horizontal mini list">
-                          <div class="item">
-                            <img
-                              src="https://picsum.photos/seed/picsum/100/100"
-                              alt=""
-                              class="ui avatar image"
-                            />
-                            <div class="content">
-                              <a href="#" class="header">李密仁</a>
-                            </div>
-                          </div>
-                          <div class="item">
-                            <i class="calendar grey disabled icon"></i>
-                            2020-10-14
-                          </div>
-                          <div class="item">
-                            <i class="eye disabled icon grey"></i> 2546
-                          </div>
-                        </div>
-                      </div>
-                      <div class="right aligned five wide column">
-                        <a
-                          href=""
-                          class="ui label basic teal m-padded-tiny m-font-thin"
-                          >认知升级</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="five wide column">
-                    <a href="#" target="_blank">
-                      <img
-                        src="https://picsum.photos/seed/picsum/800/450"
-                        alt=""
-                        class="ui rounded image"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="ui m-mobile-lr-clear vertical segment m-padded-tb-large"
-              >
-                <div class="ui stackable mobile reversed grid">
-                  <div class="eleven wide column">
-                    <h3 class="ui header">图标文字在产品环境下无法正常显示</h3>
-                    <p class="m-text">
-                      我也试了调整这两个配置项的值 config.assets.compile = true
-                      config.assets.digest = true
-                      还是没能解决问题。最后我只能手动将这些文件命中的
-                      指纹值去掉， 问题算是解决了。 但是，这个问题不算是...
-                    </p>
-                    <div class="ui stackable grid">
-                      <div class="eleven wide column">
-                        <div class="ui horizontal mini list">
-                          <div class="item">
-                            <img
-                              src="https://picsum.photos/seed/picsum/100/100"
-                              alt=""
-                              class="ui avatar image"
-                            />
-                            <div class="content">
-                              <a href="#" class="header">李密仁</a>
-                            </div>
-                          </div>
-                          <div class="item">
-                            <i class="calendar grey disabled icon"></i>
-                            2020-10-14
-                          </div>
-                          <div class="item">
-                            <i class="eye disabled icon grey"></i> 2546
-                          </div>
-                        </div>
-                      </div>
-                      <div class="right aligned five wide column">
-                        <a
-                          href=""
-                          class="ui label basic teal m-padded-tiny m-font-thin"
-                          >认知升级</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="five wide column">
-                    <a href="#" target="_blank">
-                      <img
-                        src="https://picsum.photos/seed/picsum/800/450"
-                        alt=""
-                        class="ui rounded image"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- footer -->
-              <div class="ui buttom attached segment">
+              <!-- 上下页 -->
+              <div class="ui buttom attached segment" th:if="${page.totalPages > 1}">
                 <div class="ui middle aligned two column grid">
                   <div class="column">
-                    <a href="#" class="ui teal basic mini button">上一页</a>
+                    <a href="#" class="ui teal basic mini button" th:unless="${page.isFirst()}"
+                      th:href="@{/blog/(page=${page.getNumber() - 1})}">上一页</a>
                   </div>
                   <div class="right aligned column">
-                    <a href="#" class="ui teal basic mini button">下一页</a>
+                    <a href="#" class="ui teal basic mini button" th:unless="${page.isLast()}"
+                       th:href="@{/blog/(page=${page.getNumber() + 1})}">下一页</a>
                   </div>
                 </div>
               </div>
