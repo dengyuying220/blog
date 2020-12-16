@@ -71,8 +71,8 @@
 
             <!-- content -->
             <div class="ui attached segment">
-              <div class="ui m-mobile-lr-clear vertical segment m-padded-tb-large">
-                <div class="ui middle aligned stackable mobile reversed grid" th:each="blog : ${page.content}">
+              <div class="ui m-mobile-lr-clear vertical segment m-padded-tb-large" th:each="blog : ${page.content}">
+                <div class="ui middle aligned stackable mobile reversed grid" >
                   <div class="eleven wide column">
                     <h3 class="ui header">
                       <a href="#" class="m-black" th:text="${blog.title}" target="_blank"
@@ -165,25 +165,8 @@
               </div>
               <div class="ui teal segment">
                 <div class="ui stackable vertical menu">
-                  <a href="#" class="item"
-                    >学习日志
-                    <div class="ui teal basic left pointing label">22</div>
-                  </a>
-                  <a href="#" class="item"
-                    >思考与感悟
-                    <div class="ui teal basic left pointing label">22</div>
-                  </a>
-                  <a href="#" class="item"
-                    >学习日志
-                    <div class="ui teal basic left pointing label">22</div>
-                  </a>
-                  <a href="#" class="item"
-                    >思考与感悟
-                    <div class="ui teal basic left pointing label">22</div>
-                  </a>
-                  <a href="#" class="item"
-                    >思考与感悟
-                    <div class="ui teal basic left pointing label">22</div>
+                  <a href="#" class="item" th:each="type : ${types}"><span th:text="${type.name}">学习日志</span>
+                    <div class="ui teal basic left pointing label" th:text="${#lists.size(type.blogLst)}">22</div>
                   </a>
                 </div>
               </div>
@@ -205,65 +188,10 @@
                 </div>
               </div>
               <div class="ui teal segment">
-                <a
+                <a th:each="tag : ${tags}"
                   href="#"
-                  class="ui teal basic left pointing label m-margin-tb-tiny"
-                  >方法
-                  <div class="detail">19</div>
-                </a>
-                <a
-                  href="#"
-                  class="ui teal basic left pointing label m-margin-tb-tiny"
-                  >方法论
-                  <div class="detail">19</div>
-                </a>
-                <a
-                  href="#"
-                  class="ui teal basic left pointing label m-margin-tb-tiny"
-                  >方法论
-                  <div class="detail">19</div>
-                </a>
-                <a
-                  href="#"
-                  class="ui teal basic left pointing label m-margin-tb-tiny"
-                  >方法论
-                  <div class="detail">19</div>
-                </a>
-                <a
-                  href="#"
-                  class="ui teal basic left pointing label m-margin-tb-tiny"
-                  >方法
-                  <div class="detail">19</div>
-                </a>
-                <a
-                  href="#"
-                  class="ui teal basic left pointing label m-margin-tb-tiny"
-                  >方法论
-                  <div class="detail">19</div>
-                </a>
-                <a
-                  href="#"
-                  class="ui teal basic left pointing label m-margin-tb-tiny"
-                  >方法论
-                  <div class="detail">19</div>
-                </a>
-                <a
-                  href="#"
-                  class="ui teal basic left pointing label m-margin-tb-tiny"
-                  >方法论
-                  <div class="detail">19</div>
-                </a>
-                <a
-                  href="#"
-                  class="ui teal basic left pointing label m-margin-tb-tiny"
-                  >方法
-                  <div class="detail">19</div>
-                </a>
-                <a
-                  href="#"
-                  class="ui teal basic left pointing label m-margin-tb-tiny"
-                  >方法论
-                  <div class="detail">19</div>
+                  class="ui teal basic left pointing label m-margin-tb-tiny"><span th:text="${tag.name}">方法</span>
+                  <div class="detail" th:text="${#lists.size(tag.blogLst)}">19</div>
                 </a>
               </div>
             </div>
@@ -277,14 +205,9 @@
                   </div>
                 </div>
               </div>
-              <div class="ui segment">
-                <a href="#" class="m-black m-font-thin">学习日志</a>
-              </div>
-              <div class="ui segment">
-                <a href="#" class="m-black m-font-thin">学习日志</a>
-              </div>
-              <div class="ui segment">
-                <a href="#" class="m-black m-font-thin">学习日志</a>
+              <div class="ui segment" th:each="rBlog : ${recommendBlogs}">
+                <a href="#" class="m-black m-font-thin" target="_blank" th:text="${rBlog.title}"
+                   th:href="@{/blog/{id}(id=${rBlog.id})}">学习日志</a>
               </div>
             </div>
 
