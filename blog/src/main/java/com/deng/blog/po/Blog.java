@@ -21,7 +21,7 @@ public class Blog {
     private String content;
     private String description;
     private String firstPicture;
-    private String flag;
+    private String flag; //0 原创 1 转载 2 翻译
     private Integer views;
     private boolean appreciation; //打赏
     private boolean share;    //转载

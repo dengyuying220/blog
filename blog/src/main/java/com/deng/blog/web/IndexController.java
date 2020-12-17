@@ -11,7 +11,9 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  * created by deng on 2020-11-11
@@ -37,9 +39,15 @@ public class IndexController {
         return "index";
     }
 
+    @PostMapping("/search")
+    public String search(@PageableDefault(size = 10, sort = {"updateTime"}, direction = Sort.Direction.DESC) Pageable pageable, String keyWD, Model model) {
+        model.addAttribute("blog", blogService.listBlog(pageable, keyWD));
+        return "search";
+    }
+
     @GetMapping("/blog/{id}")
-    public String blog(/*@PathVariable Integer id, @PathVariable String name*/) {
-        System.out.println("--------------blog--------------");
+    public String blog(@PathVariable Long id, Model model) {
+        model.addAttribute("blog", blogService.getBlog(id));
         return "blog";
     }
 }

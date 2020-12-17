@@ -18,6 +18,9 @@ public interface BlogService {
 //    条件查询
     Page<Blog> listBlog(Pageable pageable, Blog blog);
 
+//    内容查询
+    Page<Blog> listBlog(Pageable pageable, String key);
+
     Page<Blog> listBlog(Pageable pageable);
 
     List<Blog> listRecommendBlog(Integer size);
