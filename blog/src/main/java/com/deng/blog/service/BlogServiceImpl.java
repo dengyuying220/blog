@@ -56,29 +56,43 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Page<Blog> listBlog(Pageable pageable, Blog blog) {
         return blogRepository.findAll(new Specification<Blog>() {
-                                          @Override
-                                          public Predicate toPredicate(Root<Blog> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
-                                              List<Predicate> predicateList = new ArrayList<>();
-                                              if(!("".equals(blog.getTitle())) && blog.getTitle() != null) {
-                                                  predicateList.add(cb.like(root.<String>get("title"), "%" + blog.getTitle() + "%"));
-                                              }
-                                              if (blog.getType() != null) {
-                                                  predicateList.add(cb.equal(root.<Type>get("type"), blog.getType()));
-                                              }
-                                              if (blog.isRecommend()) {
-                                                  predicateList.add(cb.equal(root.<Boolean>get("recommend"), blog.isRecommend()));
-                                              }
-                                               cq.where(predicateList.toArray(new Predicate[predicateList.size()]));
+            @Override
+            public Predicate toPredicate(Root<Blog> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
+                List<Predicate> predicateList = new ArrayList<>();
+                if(!("".equals(blog.getTitle())) && blog.getTitle() != null) {
+                    predicateList.add(cb.like(root.<String>get("title"), "%" + blog.getTitle() + "%"));
+                }
+                if (blog.getType() != null) {
+                    predicateList.add(cb.equal(root.<Type>get("type"), blog.getType()));
+                }
+                if (blog.isRecommend()) {
+                    predicateList.add(cb.equal(root.<Boolean>get("recommend"), blog.isRecommend()));
+                }
+                cq.where(predicateList.toArray(new Predicate[predicateList.size()]));
 
-                                              return null;
-                                          }
-                                      }, pageable);
+                return null;
+            }
+        }, pageable);
     }
 
     @Transactional
     @Override
     public Page<Blog> listBlog(Pageable pageable, String keyWD) {
-        return (Page<Blog>) blogRepository.findByKeyWD(pageable, keyWD);
+        return blogRepository.findAll(new Specification<Blog>() {
+            @Override
+            public Predicate toPredicate(Root<Blog> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
+                if (!("".equals(keyWD)) && keyWD != null) {
+                    List<Predicate> predicateList = new ArrayList<>();
+                    predicateList.add(cb.like(root.<String>get("title"), "%" + keyWD + "%"));
+                    predicateList.add(cb.like(root.<String>get("content"), "%" + keyWD + "%"));
+                    predicateList.add(cb.like(root.<String>get("description"), "%" + keyWD + "%"));
+
+                    Predicate pre = cb.or(predicateList.toArray(new Predicate[predicateList.size()]));
+                    cq.where(pre);
+                }
+                return null;
+            }
+        }, pageable);
     }
 
     @Transactional

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -64,7 +64,7 @@
             </div>
           </div>
         </div>
-        <!-- 分类 -->
+        <!-- 标签 -->
         <div class="ui bottom attached padded segment">
           <a
             href="#"
@@ -131,69 +131,7 @@
         <div class="ui attached teal segment">
           <div
             class="ui m-padded m-mobile-lr-clear vertical segment m-padded-tb-large"
-          >
-            <div class="ui stackable mobile reversed grid">
-              <div class="eleven wide column">
-                <h3 class="ui header">图标文字在产品环境下无法正常显示</h3>
-                <p class="m-text">
-                  我也试了调整这两个配置项的值 config.assets.compile = true
-                  config.assets.digest = true
-                  还是没能解决问题。最后我只能手动将这些文件命中的 指纹值去掉，
-                  问题算是解决了。 但是，这个问题不算是...
-                </p>
-                <div class="ui stackable grid">
-                  <div class="row">
-                    <div class="eleven wide column">
-                      <div class="ui horizontal mini list">
-                        <div class="item">
-                          <img
-                            src="https://picsum.photos/seed/picsum/100/100"
-                            alt=""
-                            class="ui avatar image"
-                          />
-                          <div class="content">
-                            <a href="#" class="header">李密仁</a>
-                          </div>
-                        </div>
-                        <div class="item">
-                          <i class="calendar grey disabled icon"></i>
-                          2020-10-14
-                        </div>
-                        <div class="item">
-                          <i class="eye disabled icon grey"></i> 2546
-                        </div>
-                      </div>
-                    </div>
-                    <div class="right aligned five wide column">
-                      <a
-                        href=""
-                        class="ui label basic teal m-padded-tiny m-font-thin"
-                        >认知升级</a
-                      >
-                    </div>
-                  </div>
-                  <div class="row">
-                    <a
-                      href=""
-                      class="ui basic teal left pointing label m-padded-mini m-font-thin"
-                      >方法论</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="five wide column">
-                <a href="#" target="_blank">
-                  <img
-                    src="https://picsum.photos/seed/picsum/800/450"
-                    alt=""
-                    class="ui rounded image"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="ui m-padded m-mobile-lr-clear vertical segment m-padded-tb-large"
+            th:each="blog : ${page.content}"
           >
             <div class="ui stackable mobile reversed grid">
               <div class="eleven wide column">

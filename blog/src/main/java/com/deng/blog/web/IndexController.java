@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.validation.constraints.NotBlank;
+
 /**
  * created by deng on 2020-11-11
  **/
@@ -40,8 +42,9 @@ public class IndexController {
     }
 
     @PostMapping("/search")
-    public String search(@PageableDefault(size = 10, sort = {"updateTime"}, direction = Sort.Direction.DESC) Pageable pageable, String keyWD, Model model) {
-        model.addAttribute("blog", blogService.listBlog(pageable, keyWD));
+    public String search(@PageableDefault(size = 10, sort = {"updateTime"}, direction = Sort.Direction.DESC) Pageable pageable, @NotBlank String keyWD, Model model) {
+        model.addAttribute("page", blogService.listBlog(pageable, keyWD));
+        model.addAttribute("keyWD", keyWD);
         return "search";
     }
 
