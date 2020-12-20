@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c93e9594-a5b2-4386-a457-1306d8f940c3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/dao/BlogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/dao/BlogRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/service/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/service/BlogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/_fragment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/blog.html" afterDir="false" />
     </list>
@@ -153,45 +151,45 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="512" y="177" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1604996135494" />
-    <state width="1371" height="148" key="GridCell.Tab.0.bottom" timestamp="1608286027423">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="618" height="175" key="GridCell.Tab.0.bottom" timestamp="1608475373133">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="175" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1608135540919" />
+    <state width="618" height="175" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1608475373133" />
     <state width="1371" height="148" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1608286027423" />
-    <state width="1371" height="148" key="GridCell.Tab.0.center" timestamp="1608286027423">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="618" height="175" key="GridCell.Tab.0.center" timestamp="1608475373133">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="175" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1608135540919" />
+    <state width="618" height="175" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1608475373133" />
     <state width="1371" height="148" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1608286027423" />
-    <state width="1371" height="148" key="GridCell.Tab.0.left" timestamp="1608286027423">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="618" height="175" key="GridCell.Tab.0.left" timestamp="1608475373118">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="175" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1608135540919" />
+    <state width="618" height="175" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1608475373118" />
     <state width="1371" height="148" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1608286027423" />
-    <state width="1371" height="148" key="GridCell.Tab.0.right" timestamp="1608286027423">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="618" height="175" key="GridCell.Tab.0.right" timestamp="1608475373133">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="175" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1608135540919" />
+    <state width="618" height="175" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1608475373133" />
     <state width="1371" height="148" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1608286027423" />
-    <state width="1371" height="148" key="GridCell.Tab.1.bottom" timestamp="1608286027424">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="618" height="175" key="GridCell.Tab.1.bottom" timestamp="1608475373133">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="175" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1608135540919" />
+    <state width="618" height="175" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1608475373133" />
     <state width="1371" height="148" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1608286027424" />
-    <state width="1371" height="148" key="GridCell.Tab.1.center" timestamp="1608286027423">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="618" height="175" key="GridCell.Tab.1.center" timestamp="1608475373133">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="175" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1608135540919" />
+    <state width="618" height="175" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1608475373133" />
     <state width="1371" height="148" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1608286027423" />
-    <state width="1371" height="148" key="GridCell.Tab.1.left" timestamp="1608286027423">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="618" height="175" key="GridCell.Tab.1.left" timestamp="1608475373133">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="175" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1608135540919" />
+    <state width="618" height="175" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1608475373133" />
     <state width="1371" height="148" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1608286027423" />
-    <state width="1371" height="148" key="GridCell.Tab.1.right" timestamp="1608286027423">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="618" height="175" key="GridCell.Tab.1.right" timestamp="1608475373133">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="175" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1608135540919" />
+    <state width="618" height="175" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1608475373133" />
     <state width="1371" height="148" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1608286027423" />
     <state x="250" y="84" key="Maven.ArtifactSearchDialog" timestamp="1606457581853">
       <screen x="0" y="0" width="1440" height="860" />
@@ -226,12 +224,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/deng/blog/service/BlogServiceImpl.java</url>
-          <line>83</line>
+          <line>103</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/deng/blog/web/IndexController.java</url>
-          <line>45</line>
+          <line>56</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>

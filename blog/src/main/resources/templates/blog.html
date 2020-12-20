@@ -43,32 +43,40 @@
       <div class="ui top attached segment">
         <div class="ui horizontal list">
           <div class="item">
-            <img src="https://picsum.photos/seed/picsum/100/100" alt="" class="ui avatar image" />
-            <div class="content"><a href="#" class="header">李密仁</a></div>
+            <img src="https://picsum.photos/seed/picsum/100/100" alt="" class="ui avatar image"
+                th:src="${blog.user.avatar}"/>
+            <div class="content"><a href="#" class="header"
+                                    th:href="@{/aboutMe}" th:text="${blog.user.nickname}">李密仁</a></div>
           </div>
           <div class="item">
-            <i class="calendar grey disabled icon"></i> 2020-10-14
+            <i class="calendar grey disabled icon"></i>
+            <span th:text="${#dates.format(blog.updateTime, 'yyyy-MM-dd')}">2020-10-14</span>
           </div>
-          <div class="item"><i class="eye icon disabled grey"></i> 2546</div>
+          <div class="item">
+            <i class="eye icon disabled grey"></i>
+          <span th:text="${blog.views}"></span>
+          </div>
         </div>
       </div>
       <div class="ui attached segment">
-        <img src="https://picsum.photos/seed/picsum/800/450" alt="" class="ui fluid rounded image" />
+        <img src="https://picsum.photos/seed/picsum/800/450" alt="" class="ui fluid rounded image"
+            th:src="${blog.firstPicture}"/>
       </div>
       <div class="ui attached m-padded segment">
         <div class="ui right aligned basic segment">
           <div class="ui orange basic label" th:text="${blog.flag}">原创</div>
         </div>
         <div class="typo typo-selection">
-          <h1>中文网页重设与排版：<i class="serif">Typo.css</i></h1>
+          <h1 th:text="${blog.title}">中文网页重设与排版：<i class="serif">Typo.css</i></h1>
           <br />
 
-          <h2 id="tagline" class="serif">
+          <!--<h2 id="tagline" class="serif">
             一致化浏览器排版效果，构建最适合中文阅读的网页排版
-          </h2>
+          </h2>-->
         </div>
 
-        <div id="content" class="m-padded-lr-responsive m-padded-tb-large typo typo-selection js-toc-content">
+        <div id="content" class="m-padded-lr-responsive m-padded-tb-large typo typo-selection js-toc-content"
+            th:text="${blog.content}">
           <ol id="table">
             <li>
               <a href="#section1">关于 <i class="serif">Typo.css</i></a>
@@ -572,7 +580,7 @@ margin:1em 0 0.6em;
         </div>
         <!-- 标签 -->
         <div class="m-padded-lr">
-          <div class="ui basic teal left pointing label">方法论</div>
+          <div class="ui basic teal left pointing label" th:each="tag : ${blog.tagLst}" th:text="${tag.name}">方法论</div>
         </div>
         <!-- 赞赏 -->
         <div class="ui center aligned basic segment">
@@ -584,11 +592,13 @@ margin:1em 0 0.6em;
           <div class="ui orange basic label">
             <div class="ui images" style="font-size: inherit !important">
               <div class="ui image">
-                <img src="../static/images/wx.png" alt="" class="ui rounded bordered image" style="width: 120px" />
+                <img src="../static/images/wx.png" alt="" class="ui rounded bordered image" style="width: 120px"
+                    th:src="@{/images/wx.png}" />
                 <div>支付宝</div>
               </div>
               <div class="ui image">
-                <img src="../static/images/wx.png" alt="" class="ui rounded bordered image" style="width: 120px" />
+                <img src="../static/images/wx.png" alt="" class="ui rounded bordered image" style="width: 120px"
+                     th:src="@{/images/wx.png}" />
                 <div>微信</div>
               </div>
             </div>
@@ -599,8 +609,8 @@ margin:1em 0 0.6em;
         <div class="ui middle aligned grid">
           <div class="eleven wide column">
             <ul class="list">
-              <li>作者：邓渝蓥</li>
-              <li>发表时间：2020-10-20 22:29</li>
+              <li>作者：<span th:text="${blog.user.nickname}">邓渝蓥</span></li>
+              <li>发表时间：<span th:text="${#dates.format(blog.updateTime, 'yyyy-MM-dd HH:mm')}">2020-10-20 22:29</span></li>
               <li>
                 版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）
               </li>
@@ -609,7 +619,7 @@ margin:1em 0 0.6em;
           </div>
           <div class="five wide column">
             <img src="../static/images/wx.png" alt="" class="ui right floated rounded bordered image"
-              style="width: 110px" />
+              style="width: 110px" th:src="@{/images/wx.png}" />
           </div>
         </div>
       </div>

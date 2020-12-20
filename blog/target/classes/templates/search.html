@@ -59,7 +59,11 @@
           <div class="ui m-padded m-mobile-lr-clear vertical segment m-padded-tb-large" th:each="blog : ${page.content}">
             <div class="ui stackable mobile reversed grid">
               <div class="eleven wide column">
-                <h3 class="ui header" th:text="${blog.title}">图标文字在产品环境下无法正常显示</h3>
+                <h3 class="ui header" >
+                  <a class="m-black" th:text="${blog.title}" target="_blank" th:href="@{/blog/{id}(id=${blog.id})}">
+                    图标文字在产品环境下无法正常显示
+                  </a>
+                </h3>
                 <p class="m-text" th:text="${blog.description}">
                   我也试了调整这两个配置项的值 config.assets.compile = true
                                     config.assets.digest = true
