@@ -73,6 +73,11 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>6.0.13.Final</version>
 		</dependency>
+		<dependency>
+			<groupId>com.atlassian.commonmark</groupId>
+			<artifactId>commonmark</artifactId>
+			<version>0.16.1</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
