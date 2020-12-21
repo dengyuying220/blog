@@ -4,6 +4,7 @@ import com.deng.blog.NotFoundException;
 import com.deng.blog.dao.BlogRepository;
 import com.deng.blog.po.Blog;
 import com.deng.blog.po.Type;
+import com.deng.blog.util.MarkdownUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
@@ -49,8 +50,22 @@ public class BlogServiceImpl implements BlogService {
     @Transactional
     @Override
     public Blog getBlog(Long id) {
-        return blogRepository.findById(id).get();
+        Blog blog = blogRepository.findById(id).get();
+        if (blog == null) {
+            throw new NotFoundException("该博客不存在");
+        }
+        Blog newBlog = new Blog();
+        BeanUtils.copyProperties(blog, newBlog);
+        String content = markdownToHtml(newBlog.getContent());
+        newBlog.setContent(content);
+        return newBlog;
     }
+
+    @Override
+    public String markdownToHtml(String markdown) {
+        return MarkdownUtils.markdownToHtmlExtensions(markdown);
+    }
+
 
     @Transactional
     @Override
