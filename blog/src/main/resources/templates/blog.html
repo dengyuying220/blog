@@ -15,7 +15,7 @@
 
 <body>
   <!-- 导航 -->
-  <nav class="ui inverted segment attached m-shadow-small">
+  <nav th:replace="_fragment :: menu(0)" class="ui inverted segment attached m-shadow-small">
     <div class="ui container">
       <div class="ui inverted secondary stackable menu">
         <h2 class="ui teal header item m-padded-tb-mini">Blog</h2>
@@ -58,7 +58,7 @@
           </div>
         </div>
       </div>
-      <div class="ui attached segment">
+      <div class="ui attached segment" th:unless="${#strings.isEmpty(blog.firstPicture)}">
         <img src="https://picsum.photos/seed/picsum/800/450" alt="" class="ui fluid rounded image"
             th:src="${blog.firstPicture}"/>
       </div>
@@ -192,7 +192,7 @@
             也根据实际情况提供相应的方案。我们重要要注意的两点是：
           </p>
           <ol>
-            <li>语义：语义对应的用法和样式是否与中文排版一致</li>
+            <li>语义语义对应的用法和样式是否与中文排版一致语义语义对应的用法和样式是否与中文排版一致语义义对应的用法和样式是否与中文排版一致语义语义对应的用法和样式是否与中文排版一致语义语义对应的用法和样式是否与中文排版一致语义义对应的用法和样式是否与中文排版一致</li>
             <li>表现：在各浏览器中的字体、大小和缩放是否如排版预期</li>
           </ol>
           <p>

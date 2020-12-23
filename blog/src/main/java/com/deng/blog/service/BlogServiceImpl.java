@@ -55,9 +55,9 @@ public class BlogServiceImpl implements BlogService {
             throw new NotFoundException("该博客不存在");
         }
         Blog newBlog = new Blog();
-        BeanUtils.copyProperties(blog, newBlog);
-        String content = markdownToHtml(newBlog.getContent());
-        newBlog.setContent(content);
+        BeanUtils.copyProperties(blog, newBlog);//??
+        newBlog.setContent(markdownToHtml(newBlog.getContent()));
+        newBlog.getUser().setPassword("");
         return newBlog;
     }
 
