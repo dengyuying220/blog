@@ -693,7 +693,7 @@ margin:1em 0 0.6em;
                 </div>
               </div>
             </div>
-            <form class="ui reply form">
+            <form class="ui form">
               <input type="hidden" name="blog.id" th:value="${blog.id}">
               <input type="hidden" name="parentComment.id" th:value="-1">
               <div class="field">
@@ -713,11 +713,12 @@ margin:1em 0 0.6em;
                   </div>
                 </div>
                 <div class="field m-mobile-wide m-margin-bottom-small">
-                  <button type="submit" class="ui teal icon button m-mobile-wide">
+                  <button type="button" class="ui teal icon button m-mobile-wide" id="sendCommentBtn">
                     <i class="icon edit"></i> 发布
                   </button>
                 </div>
               </div>
+              <div class="ui error message"></div>
             </form>
           </div>
         </div>
@@ -796,7 +797,7 @@ margin:1em 0 0.6em;
 
 
 
-  <script th:inline="">
+  <script th:inline="javascript">
     $(".m-toggle").click(function () {
       $(".m-item").toggleClass("m-mobile-hide");
     });
@@ -807,7 +808,7 @@ margin:1em 0 0.6em;
     });
 
     // 微信
-    serverUrl = "http://www.";
+    serverUrl = "127.0.0.1:8080";
     var url = /*[[@{/blog/{id}(id=${blog.id})}]]*/"";
     var qrcode = new QRCode("qrcode", {
       text: serverUrl + url,
@@ -857,7 +858,7 @@ margin:1em 0 0.6em;
     // 表单非空验证
     $(".ui.form").form({
       fields: {
-        name: {
+        content: {
           identifier: "content",
           rules: [
             {
@@ -866,7 +867,7 @@ margin:1em 0 0.6em;
             },
           ],
         },
-        name: {
+        nickname: {
           identifier: "nickname",
           rules: [
             {
@@ -875,7 +876,7 @@ margin:1em 0 0.6em;
             },
           ],
         },
-        name: {
+        email: {
           identifier: "email",
           rules: [
             {
@@ -885,6 +886,14 @@ margin:1em 0 0.6em;
           ],
         },
       },
+    });
+    $("#sendCommentBtn").click(function () {
+      var checkRes = $(".ui.form").form("validate form");
+      if (checkRes) {
+        console.log("验证成功");
+      } else {
+        console.log("验证失败");
+      }
     });
   </script>
 </body>
