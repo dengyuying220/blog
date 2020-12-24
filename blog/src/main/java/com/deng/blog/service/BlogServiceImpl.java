@@ -54,16 +54,31 @@ public class BlogServiceImpl implements BlogService {
         if (blog == null) {
             throw new NotFoundException("该博客不存在");
         }
+        return blog;
+    }
+
+    /*@Override
+    public Blog showBlog(Long id) {
+        Blog blog = blogRepository.findById(id).get();
+        if (blog == null) {
+            throw new NotFoundException("该博客不存在");
+        }
         Blog newBlog = new Blog();
         BeanUtils.copyProperties(blog, newBlog);//??
         newBlog.setContent(markdownToHtml(newBlog.getContent()));
         newBlog.getUser().setPassword("");
         return newBlog;
-    }
+    }*/
+
 
     @Override
-    public String markdownToHtml(String markdown) {
-        return MarkdownUtils.markdownToHtmlExtensions(markdown);
+    public Blog getMarkdownToHtmlBlog(Long id) {
+        Blog sBlog = getBlog(id);
+        Blog tBlog = new Blog();
+        BeanUtils.copyProperties(sBlog, tBlog);
+        tBlog.getUser().setPassword("");
+        tBlog.setContent(MarkdownUtils.markdownToHtmlExtensions(tBlog.getContent()));
+        return tBlog;
     }
 
 
