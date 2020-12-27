@@ -624,53 +624,74 @@ margin:1em 0 0.6em;
         </div>
       </div>
       <div id="comment_container" class="ui bottom attached segment">
-        <div class="ui teal segment">
-          <div class="ui threaded comments">
-            <h3 class="ui dividing header">Comments</h3>
-            <div class="comment">
-              <a class="avatar">
-                <img src="https://picsum.photos/seed/picsum/100/100" />
-              </a>
-              <div class="content">
-                <a class="author">Matt</a>
-                <div class="metadata">
-                  <span class="date">Today at 5:42PM</span>
+
+          <div class="ui teal segment">
+            <div th:fragment="commentList">
+              <div class="ui threaded comments" style="max-width: 100%;">
+                <h3 class="ui dividing header">评论</h3>
+                <div class="comment" th:each="comment : ${comments}">
+                  <a class="avatar">
+                    <img src="https://picsum.photos/seed/picsum/100/100"
+                         />
+                  </a>
+                  <div class="content">
+                    <a class="author" th:text="${comment.nickname}">Matt</a>
+                    <div class="metadata">
+                      <span class="date" th:text="${#dates.format(comment.createTime, 'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
+                    </div>
+                    <div class="text">How artistic!</div>
+                    <div class="actions">
+                      <a class="reply" data-commentid="1" data-commentnickname="Matt" onclick="reply(this)"
+                          th:attr="data-commentid='${comment.id}', data-commentnickname='${comment.bickname}'">回复</a>
+                    </div>
+                  </div>
                 </div>
-                <div class="text">How artistic!</div>
-                <div class="actions">
-                  <a class="reply">回复</a>
-                </div>
-              </div>
-            </div>
-            <div class="comment">
-              <a class="avatar">
-                <img src="https://picsum.photos/seed/picsum/100/100" />
-              </a>
-              <div class="content">
-                <a class="author">Elliot Fu</a>
-                <div class="metadata">
-                  <span class="date">Yesterday at 12:30AM</span>
-                </div>
-                <div class="text">
-                  <p>
-                    This has been very useful for my research. Thanks as well!
-                  </p>
-                </div>
-                <div class="actions">
-                  <a class="reply">回复</a>
-                </div>
-              </div>
-              <div class="comments">
                 <div class="comment">
                   <a class="avatar">
                     <img src="https://picsum.photos/seed/picsum/100/100" />
                   </a>
                   <div class="content">
-                    <a class="author">Jenny Hess</a>
+                    <a class="author">Elliot Fu</a>
                     <div class="metadata">
-                      <span class="date">Just now</span>
+                      <span class="date">Yesterday at 12:30AM</span>
                     </div>
-                    <div class="text">Elliot you are always so right :)</div>
+                    <div class="text">
+                      <p>
+                        This has been very useful for my research. Thanks as well!
+                      </p>
+                    </div>
+                    <div class="actions">
+                      <a class="reply">回复</a>
+                    </div>
+                  </div>
+                  <div class="comments">
+                    <div class="comment">
+                      <a class="avatar">
+                        <img src="https://picsum.photos/seed/picsum/100/100" />
+                      </a>
+                      <div class="content">
+                        <a class="author">Jenny Hess</a>
+                        <div class="metadata">
+                          <span class="date">Just now</span>
+                        </div>
+                        <div class="text">Elliot you are always so right :)</div>
+                        <div class="actions">
+                          <a class="reply">回复</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="comment">
+                  <a class="avatar">
+                    <img src="https://picsum.photos/seed/picsum/100/100" />
+                  </a>
+                  <div class="content">
+                    <a class="author">Joe Henderson</a>
+                    <div class="metadata">
+                      <span class="date">5 days ago</span>
+                    </div>
+                    <div class="text">Dude, this is awesome. Thanks so much</div>
                     <div class="actions">
                       <a class="reply">回复</a>
                     </div>
@@ -678,50 +699,34 @@ margin:1em 0 0.6em;
                 </div>
               </div>
             </div>
-            <div class="comment">
-              <a class="avatar">
-                <img src="https://picsum.photos/seed/picsum/100/100" />
-              </a>
-              <div class="content">
-                <a class="author">Joe Henderson</a>
-                <div class="metadata">
-                  <span class="date">5 days ago</span>
-                </div>
-                <div class="text">Dude, this is awesome. Thanks so much</div>
-                <div class="actions">
-                  <a class="reply">回复</a>
-                </div>
+          </div>
+        <form class="ui form" id="commentForm">
+          <input type="text" name="blog.id" th:value="${blog.id}">
+          <input type="text" name="parentComment.id" th:value="-1" value="-1">
+          <div class="field">
+            <textarea name="content" placeholder="请输入评论信息..."></textarea>
+          </div>
+          <div class="fields">
+            <div class="field m-mobile-wide m-margin-bottom-small">
+              <div class="ui left icon input">
+                <i class="user icon"></i>
+                <input type="text" name="nickname" placeholder="姓名" />
               </div>
             </div>
-            <form class="ui form">
-              <input type="hidden" name="blog.id" th:value="${blog.id}">
-              <input type="hidden" name="parentComment.id" th:value="-1">
-              <div class="field">
-                <textarea name="content" placeholder="请输入评论信息..."></textarea>
+            <div class="field m-mobile-wide m-margin-bottom-small">
+              <div class="ui left icon input">
+                <i class="mail icon"></i>
+                <input type="text" name="email" placeholder="邮箱" />
               </div>
-              <div class="fields">
-                <div class="field m-mobile-wide m-margin-bottom-small">
-                  <div class="ui left icon input">
-                    <i class="user icon"></i>
-                    <input type="text" name="nickname" placeholder="姓名" />
-                  </div>
-                </div>
-                <div class="field m-mobile-wide m-margin-bottom-small">
-                  <div class="ui left icon input">
-                    <i class="mail icon"></i>
-                    <input type="text" name="email" placeholder="邮箱" />
-                  </div>
-                </div>
-                <div class="field m-mobile-wide m-margin-bottom-small">
-                  <button type="button" class="ui teal icon button m-mobile-wide" id="sendCommentBtn">
-                    <i class="icon edit"></i> 发布
-                  </button>
-                </div>
-              </div>
-              <div class="ui error message"></div>
-            </form>
+            </div>
+            <div class="field m-mobile-wide m-margin-bottom-small">
+              <button type="button" class="ui teal icon button m-mobile-wide" id="sendCommentBtn">
+                <i class="icon edit"></i> 发布
+              </button>
+            </div>
           </div>
-        </div>
+          <div class="ui error message"></div>
+        </form>
       </div>
     </div>
   </div>
@@ -887,14 +892,42 @@ margin:1em 0 0.6em;
         },
       },
     });
+    //发布按钮
     $("#sendCommentBtn").click(function () {
       var checkRes = $(".ui.form").form("validate form");
       if (checkRes) {
         console.log("验证成功");
+        postData();
       } else {
         console.log("验证失败");
       }
     });
+    // 表单数据提交
+    function postData() {
+      $("#comment_container").load(/*[[@{/comment}]]*/"", {
+        "blog.id" : $("[name = 'blog.id']").val(),
+        "parentComment.id" : $("[name = 'parentComment.id']").val(),
+        "content" : $("[name = 'content']").val(),
+        "nickname" : $("[name = 'nickname']").val(),
+        "email" : $("[name = 'email']").val(),
+      }, function (responseTxt, statusTxt, xhr) {
+        $(window).scrollTo("#comment_container", 500);
+        
+        $("[name = 'parentComment.id']").val(-1);
+        $("[name = 'content']").val("");
+        $("[name = 'content']").attr("placeholder", "请输入评论信息...");
+      })
+    };
+    function reply(obj) {
+      var commentId = $(obj).data('commentid');
+      var commentNickname = $(obj).data('commentnickname');
+
+      $("[name = 'content']").attr("placeholder", "@"+commentNickname).focus();
+      $("[name = 'parentComment.id']").val(commentId);
+
+      $(window).scrollTo("#comment_form", 500);
+    };
+    
   </script>
 </body>
 

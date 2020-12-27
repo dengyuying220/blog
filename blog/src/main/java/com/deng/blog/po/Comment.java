@@ -87,6 +87,22 @@ public class Comment {
         this.blog = blog;
     }
 
+    public List<Comment> getReplyComments() {
+        return replyComments;
+    }
+
+    public void setReplyComments(List<Comment> replyComments) {
+        this.replyComments = replyComments;
+    }
+
+    public Comment getParentComment() {
+        return parentComment;
+    }
+
+    public void setParentComment(Comment parentComment) {
+        this.parentComment = parentComment;
+    }
+
     @Override
     public String toString() {
         return "Comment{" +
