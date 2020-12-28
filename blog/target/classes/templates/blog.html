@@ -623,9 +623,9 @@ margin:1em 0 0.6em;
           </div>
         </div>
       </div>
-      <div id="comment_container" class="ui bottom attached segment">
-
-          <div class="ui teal segment">
+      <div class="ui bottom attached segment">
+        
+          <div id="comment_container" class="ui teal segment">
             <div th:fragment="commentList">
               <div class="ui threaded comments" style="max-width: 100%;">
                 <h3 class="ui dividing header">评论</h3>
@@ -639,67 +639,39 @@ margin:1em 0 0.6em;
                     <div class="metadata">
                       <span class="date" th:text="${#dates.format(comment.createTime, 'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
                     </div>
-                    <div class="text">How artistic!</div>
+                    <div class="text" th:text="${comment.content}">How artistic!</div>
                     <div class="actions">
                       <a class="reply" data-commentid="1" data-commentnickname="Matt" onclick="reply(this)"
-                          th:attr="data-commentid='${comment.id}', data-commentnickname='${comment.bickname}'">回复</a>
+                          th:attr="data-commentid=${comment.id}, data-commentnickname=${comment.nickname}">回复</a>
                     </div>
                   </div>
-                </div>
-                <div class="comment">
-                  <a class="avatar">
-                    <img src="https://picsum.photos/seed/picsum/100/100" />
-                  </a>
-                  <div class="content">
-                    <a class="author">Elliot Fu</a>
-                    <div class="metadata">
-                      <span class="date">Yesterday at 12:30AM</span>
-                    </div>
-                    <div class="text">
-                      <p>
-                        This has been very useful for my research. Thanks as well!
-                      </p>
-                    </div>
-                    <div class="actions">
-                      <a class="reply">回复</a>
-                    </div>
-                  </div>
-                  <div class="comments">
-                    <div class="comment">
+                  <div class="comments" th:if="${#arrays.length(comment.replyComments) > 0}">
+                    <div class="comment" th:each="reply : ${comment.replyComments}">
                       <a class="avatar">
-                        <img src="https://picsum.photos/seed/picsum/100/100" />
+                        <img src="https://picsum.photos/seed/picsum/100/100"
+                             />
                       </a>
                       <div class="content">
-                        <a class="author">Jenny Hess</a>
+                        <a class="author" >
+                          <span th:text="${reply.nickname}">小红</span>&nbsp;
+                          <span th:text="|@ ${reply.parentComment.nickname}" class="m-teal">@小白</span>
+                        </a>
                         <div class="metadata">
-                          <span class="date">Just now</span>
+                          <span class="date" th:text="${#dates.format(reply.createTime, 'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
                         </div>
-                        <div class="text">Elliot you are always so right :)</div>
+                        <div class="text" th:text="${reply.content}">How artistic!</div>
                         <div class="actions">
-                          <a class="reply">回复</a>
+                          <a class="reply" data-commentid="1" data-commentnickname="Matt" onclick="reply(this)"
+                              th:attr="data-commentid=${reply.id}, data-commentnickname=${reply.nickname}">回复</a>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="comment">
-                  <a class="avatar">
-                    <img src="https://picsum.photos/seed/picsum/100/100" />
-                  </a>
-                  <div class="content">
-                    <a class="author">Joe Henderson</a>
-                    <div class="metadata">
-                      <span class="date">5 days ago</span>
-                    </div>
-                    <div class="text">Dude, this is awesome. Thanks so much</div>
-                    <div class="actions">
-                      <a class="reply">回复</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+              </div> 
+            </div>          
           </div>
+        
         <form class="ui form" id="commentForm">
           <input type="text" name="blog.id" th:value="${blog.id}">
           <input type="text" name="parentComment.id" th:value="-1" value="-1">
@@ -902,6 +874,10 @@ margin:1em 0 0.6em;
         console.log("验证失败");
       }
     });
+    $(function() {
+      $("#comment_container").load(/*[[@{/comment/{blogId}(blogId=${blog.id})}]]*/"comment/6");
+    })
+    
     // 表单数据提交
     function postData() {
       $("#comment_container").load(/*[[@{/comment}]]*/"", {
