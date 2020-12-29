@@ -70,7 +70,6 @@ public class BlogServiceImpl implements BlogService {
         return newBlog;
     }*/
 
-
     @Override
     public Blog getMarkdownToHtmlBlog(Long id) {
         Blog sBlog = getBlog(id);
@@ -79,6 +78,11 @@ public class BlogServiceImpl implements BlogService {
         tBlog.getUser().setPassword("");
         tBlog.setContent(MarkdownUtils.markdownToHtmlExtensions(tBlog.getContent()));
         return tBlog;
+    }
+
+    @Override
+    public int updateViews(Long id) {
+        return blogRepository.updateViews(id);
     }
 
 

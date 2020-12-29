@@ -51,7 +51,7 @@ public class IndexController {
     @GetMapping("/blog/{id}")
     public String blog(@PathVariable Long id, Model model) {
         model.addAttribute("blog", blogService.getMarkdownToHtmlBlog(id));
-
+//        blogService.updateViews(id);
         return "blog";
     }
 }

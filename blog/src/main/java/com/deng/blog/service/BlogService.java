@@ -19,6 +19,8 @@ public interface BlogService {
 
     Blog getMarkdownToHtmlBlog(Long id);
 
+    int updateViews(Long id);
+
 //    条件查询
     Page<Blog> listBlog(Pageable pageable, Blog blog);
 

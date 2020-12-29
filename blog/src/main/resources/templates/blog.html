@@ -635,7 +635,11 @@ margin:1em 0 0.6em;
                          />
                   </a>
                   <div class="content">
-                    <a class="author" th:text="${comment.nickname}">Matt</a>
+                    <a class="author">
+                      <span th:text="${comment.nickname}">Matt</span>
+                      <div class="ui mini basic teal left pointing label m-padded-mini"
+                          th:if="${comment.adminComment}">博主</div>
+                    </a>
                     <div class="metadata">
                       <span class="date" th:text="${#dates.format(comment.createTime, 'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
                     </div>
@@ -653,8 +657,10 @@ margin:1em 0 0.6em;
                       </a>
                       <div class="content">
                         <a class="author" >
-                          <span th:text="${reply.nickname}">小红</span>&nbsp;
-                          <span th:text="|@ ${reply.parentComment.nickname}" class="m-teal">@小白</span>
+                          <span th:text="${reply.nickname}">小红</span>
+                          <div class="ui mini basic teal left pointing label m-padded-mini"
+                          th:if="${reply.adminComment}">博主</div>
+                          &nbsp;<span th:text="|@ ${reply.parentComment.nickname}" class="m-teal">@小白</span>
                         </a>
                         <div class="metadata">
                           <span class="date" th:text="${#dates.format(reply.createTime, 'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
@@ -673,8 +679,8 @@ margin:1em 0 0.6em;
           </div>
         
         <form class="ui form" id="commentForm">
-          <input type="text" name="blog.id" th:value="${blog.id}">
-          <input type="text" name="parentComment.id" th:value="-1" value="-1">
+          <input type="hidden" name="blog.id" th:value="${blog.id}">
+          <input type="hidden" name="parentComment.id" th:value="-1" value="-1">
           <div class="field">
             <textarea name="content" placeholder="请输入评论信息..."></textarea>
           </div>
@@ -682,13 +688,16 @@ margin:1em 0 0.6em;
             <div class="field m-mobile-wide m-margin-bottom-small">
               <div class="ui left icon input">
                 <i class="user icon"></i>
-                <input type="text" name="nickname" placeholder="姓名" />
+                <input type="text" name="nickname" placeholder="姓名" 
+                    th:value="${session.user}!=null ? ${session.user.nickname}"
+                    onchange="changeValue(this)" />
               </div>
             </div>
             <div class="field m-mobile-wide m-margin-bottom-small">
               <div class="ui left icon input">
                 <i class="mail icon"></i>
-                <input type="text" name="email" placeholder="邮箱" />
+                <input type="text" name="email" placeholder="邮箱" 
+                th:value="${session.user}!=null ? ${session.user.email}"/>
               </div>
             </div>
             <div class="field m-mobile-wide m-margin-bottom-small">
@@ -903,6 +912,9 @@ margin:1em 0 0.6em;
 
       $(window).scrollTo("#comment_form", 500);
     };
+    function changeValue(obj){
+            $(obj).attr("value",$(obj).val());
+    }
     
   </script>
 </body>
