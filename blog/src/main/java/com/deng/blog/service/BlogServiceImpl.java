@@ -72,6 +72,7 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public Blog getMarkdownToHtmlBlog(Long id) {
+        updateViews(id);
         Blog sBlog = getBlog(id);
         Blog tBlog = new Blog();
         BeanUtils.copyProperties(sBlog, tBlog);
