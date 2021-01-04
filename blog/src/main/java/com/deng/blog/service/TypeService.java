@@ -21,7 +21,7 @@ public interface TypeService {
 
     List<Type> listType();
 
-    List<Type> listType(Integer size);
+    List<Type> listTypeTop(Integer size);
 
     Type updateType(Long id, Type type);
 
