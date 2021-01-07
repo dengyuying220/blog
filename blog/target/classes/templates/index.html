@@ -111,8 +111,10 @@
                       </div>
                       <div class="right aligned five wide column">
                         <a
-                          href="" th:text="${blog.type.name}"
+                          href="" 
                           class="ui label basic teal m-padded-tiny m-font-thin"
+                          th:text="${blog.type.name}"
+                          th:href="@{/type/{id}(id=${blog.type.id})}"
                           >认知升级</a
                         >
                       </div>
@@ -157,6 +159,7 @@
                   </div>
                   <div class="right aligned column">
                     <a href="#" target="_blank"
+                      th:href="@{/type/-1}"
                       >more
                       <i class="angle double right disabled icon"></i>
                     </a>
@@ -165,7 +168,9 @@
               </div>
               <div class="ui teal segment">
                 <div class="ui stackable vertical menu">
-                  <a href="#" class="item" th:each="type : ${types}"><span th:text="${type.name}">学习日志</span>
+                  <a href="#" class="item" th:each="type : ${types}"
+                    th:href="@{/type/{id}(id=${type.id})}"
+                  ><span th:text="${type.name}">学习日志</span>
                     <div class="ui teal basic left pointing label" th:text="${#lists.size(type.blogLst)}">22</div>
                   </a>
                 </div>
@@ -180,8 +185,9 @@
                     <i class="tag disabled icon grey"></i>标签
                   </div>
                   <div class="right aligned column">
-                    <a href="#" target="_blank" th:href="@{/type}"
-                      >more
+                    <a href="#" target="_blank" 
+                      th:href="@{/tag/-1}"  
+                    >more
                       <i class="angle double right disabled icon"></i>
                     </a>
                   </div>
@@ -189,6 +195,7 @@
               </div>
               <div class="ui teal segment">
                 <a th:each="tag : ${tags}"
+                  th:href="@{/tag/{id}(id=${tag.id})}"
                   href="#"
                   class="ui teal basic left pointing label m-margin-tb-tiny"><span th:text="${tag.name}">方法</span>
                   <div class="detail" th:text="${#lists.size(tag.blogLst)}">19</div>

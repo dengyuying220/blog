@@ -1,8 +1,8 @@
 /* padded */
 .m-padded-mini {
   padding: 0.2em !important;
+  padding-left: 0.3em !important;
 }
-
 .m-padded-tiny {
   padding: 0.3em !important;
 }

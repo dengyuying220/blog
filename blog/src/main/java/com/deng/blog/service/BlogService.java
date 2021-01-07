@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * created by deng on 2020-11-30
@@ -15,8 +16,6 @@ public interface BlogService {
 
     Blog getBlog(Long id);
 
-//    Blog showBlog(Long id);
-
     Blog getMarkdownToHtmlBlog(Long id);
 
     int updateViews(Long id);
@@ -24,8 +23,12 @@ public interface BlogService {
 //    条件查询
     Page<Blog> listBlog(Pageable pageable, Blog blog);
 
-//    内容查询
+//    关键字查询
     Page<Blog> listBlog(Pageable pageable, String key);
+
+    Page<Blog> listBlogByTagId(Pageable pageable, Long tagId);
+
+    Map<String, List<Blog>> archiveBlog();
 
     Page<Blog> listBlog(Pageable pageable);
 

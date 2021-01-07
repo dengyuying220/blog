@@ -16,10 +16,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+import javax.persistence.criteria.*;
 import javax.transaction.Transactional;
 import java.util.*;
 
@@ -56,19 +53,6 @@ public class BlogServiceImpl implements BlogService {
         }
         return blog;
     }
-
-    /*@Override
-    public Blog showBlog(Long id) {
-        Blog blog = blogRepository.findById(id).get();
-        if (blog == null) {
-            throw new NotFoundException("该博客不存在");
-        }
-        Blog newBlog = new Blog();
-        BeanUtils.copyProperties(blog, newBlog);//??
-        newBlog.setContent(markdownToHtml(newBlog.getContent()));
-        newBlog.getUser().setPassword("");
-        return newBlog;
-    }*/
 
     @Override
     public Blog getMarkdownToHtmlBlog(Long id) {
@@ -128,6 +112,28 @@ public class BlogServiceImpl implements BlogService {
                 return null;
             }
         }, pageable);
+    }
+
+    @Override
+    public Page<Blog> listBlogByTagId(Pageable pageable, Long tagId) {
+
+        return blogRepository.findAll(new Specification<Blog>() {
+            @Override
+            public Predicate toPredicate(Root<Blog> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
+                Join join = root.join("tagLst");
+                return cb.equal(join.get("id"), tagId);
+            }
+        }, pageable);
+    }
+
+    @Override
+    public Map<String, List<Blog>> archiveBlog() {
+        Map<String, List<Blog>> map = new HashMap<>();
+        List<String> years = blogRepository.findGroupYear();
+        for (String year : years ) {
+            map.put(year, blogRepository.findBlogByGroupYear(year));
+        }
+        return map;
     }
 
     @Transactional

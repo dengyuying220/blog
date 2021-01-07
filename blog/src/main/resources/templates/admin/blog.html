@@ -62,7 +62,7 @@
           <p th:text="${errMessage}">操作失败</p>
         </div>
         <form action="" class="ui secondary segment form">
-          <input type="hidden" name="page" />
+          <input type="hidden" name="page"/>
           <div class="fields">
             <div class="field">
               <input type="text" name="title" placeholder="标题"/>
@@ -80,7 +80,7 @@
             </div>
             <div class="field" style="display: flex; align-items: center">
               <div class="ui checkbox">
-                <input type="checkbox" name="recommend" id="recommend" />
+                <input type="checkbox" name="recommend" id="recommend"/>
                 <label for="recommend">推荐</label>
               </div>
             </div>
@@ -127,16 +127,14 @@
                   </div>
                   <div class="twelve wide column">
                     <div class="ui right floated pagination mini menu">
-                      <a class="icon item" onclick="page(this)" th:attr="data-page=${page.getNumber() - 1}"
-                         th:unless="${page.isFirst()}">
+                      <a class="icon item" onclick="page(this)" th:attr="data-page=${page.getNumber() - 1}" th:unless="${page.isFirst()}">
                         上一页
                       </a>
-<!--                      <a class="item" onclick="page(this)" th:attr="data-page=${page.getNumber() + index - 1}"
-                         th:if="${page.getNumber() + index <= page.getTotalPages()}"
-                         th:each="index:${#numbers.sequence(1, 4)}" th:text="${page.getNumber() + index}">1
-                      </a>-->
-                      <a class="icon item" onclick="page(this)" th:attr="data-page=${page.getNumber() + 1}"
-                         th:unless="${page.isLast()}">
+                      <!--                      <a class="item" onclick="page(this)" th:attr="data-page=${page.getNumber() + index - 1}"
+                                               th:if="${page.getNumber() + index <= page.getTotalPages()}"
+                                               th:each="index:${#numbers.sequence(1, 4)}" th:text="${page.getNumber() + index}">1
+                                            </a>-->
+                      <a class="icon item" onclick="page(this)" th:attr="data-page=${page.getNumber() + 1}" th:unless="${page.isLast()}">
                         下一页
                       </a>
                     </div>
@@ -205,23 +203,21 @@
         $("[name='page']").val($(obj).data("page"));
         loadData();
       }
-      $("#searchBtn").click(function() {
+      $("#searchBtn").click(function () {
         loadData();
       });
       function loadData() {
-        $("#table-Container").load(/*[[@{/admin/blog/search}]]*/"/admin/blog/search", {
-          title : $("[name='title']").val(),
-          typeId : $("[name='typeId']").val(),
-          recommend : $("[name='recommend']").prop("checked"),
-          page : $("[name='page']").val()
+        $("#table-Container").load( /*[[@{/admin/blog/search}]]*/
+            "/admin/blog/search", {
+          title: $("[name='title']").val(),
+          typeId: $("[name='typeId']").val(),
+          recommend: $("[name='recommend']").prop("checked"),
+          page: $("[name='page']").val()
         })
       }
       // 关闭提示
-      $(".message .close")
-        .on("click", function () {
-            $(this)
-                .closest(".message")
-                .transition("fade");
+      $(".message .close").on("click", function () {
+        $(this).closest(".message").transition("fade");
       });
     </script>
   </body>
