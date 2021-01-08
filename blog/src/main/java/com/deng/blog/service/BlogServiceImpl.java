@@ -136,6 +136,11 @@ public class BlogServiceImpl implements BlogService {
         return map;
     }
 
+    @Override
+    public Long countBlog() {
+        return blogRepository.count();
+    }
+
     @Transactional
     @Override
     public Page<Blog> listBlog(Pageable pageable) {

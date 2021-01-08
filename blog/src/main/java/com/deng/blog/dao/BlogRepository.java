@@ -30,7 +30,7 @@ public interface BlogRepository extends JpaRepository<Blog, Long>, JpaSpecificat
         nativeQuery = true)
     List<String> findGroupYear();
 
-    @Query(value = "select * from tb_blog b where  date_format(b.update_time, '%Y') = ?1",
+    @Query(value = "select * from tb_blog b where  date_format(b.update_time, '%Y') = ?1 ORDER by b.update_time DESC",
             nativeQuery = true)
     List<Blog> findBlogByGroupYear(String year);
 

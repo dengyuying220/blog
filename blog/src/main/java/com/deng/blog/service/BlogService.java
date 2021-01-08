@@ -30,6 +30,8 @@ public interface BlogService {
 
     Map<String, List<Blog>> archiveBlog();
 
+    Long countBlog();
+
     Page<Blog> listBlog(Pageable pageable);
 
     List<Blog> listRecommendBlog(Integer size);

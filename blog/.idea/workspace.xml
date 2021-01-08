@@ -2,38 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c93e9594-a5b2-4386-a457-1306d8f940c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/ArchiveShowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/TagShowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/dao/BlogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/dao/BlogRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/service/BlogService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/service/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/service/BlogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/service/TagService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/service/TagService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/service/TagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/service/TagServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/TypeShowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/TypeShowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/me.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/me.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/_fragment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/ArchiveShowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/ArchiveShowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/archive.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/archive.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tag.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/type.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/type.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/blog.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/deng/blog/service/BlogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deng/blog/service/BlogService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deng/blog/service/BlogServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deng/blog/service/BlogServiceImpl$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deng/blog/service/BlogServiceImpl$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deng/blog/service/BlogServiceImpl$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/deng/blog/service/BlogServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deng/blog/service/BlogServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deng/blog/service/TagService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deng/blog/service/TagService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deng/blog/service/TagServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deng/blog/service/TagServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deng/blog/web/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deng/blog/web/IndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deng/blog/web/TypeShowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deng/blog/web/TypeShowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/me.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/me.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/_fragment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/tag.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/type.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/type.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,11 +143,11 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="469" y="239" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.860@0.0.1440.860" timestamp="1605096852336" />
-    <state x="518" y="244" key="#com.intellij.ide.util.MemberChooser" timestamp="1610011927135">
+    <state x="518" y="244" key="#com.intellij.ide.util.MemberChooser" timestamp="1610077416081">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="460" y="67" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1609257542945" />
-    <state x="518" y="244" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1610011927135" />
+    <state x="518" y="244" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1610077416081" />
     <state x="599" y="97" key="#xdebugger.evaluate" timestamp="1609077333151">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -192,46 +170,46 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="512" y="177" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1604996135494" />
-    <state width="1396" height="263" key="GridCell.Tab.0.bottom" timestamp="1610013718633">
+    <state width="1396" height="263" key="GridCell.Tab.0.bottom" timestamp="1610098363822">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1237" height="86" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1609689610113" />
-    <state width="1396" height="263" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1610013718633" />
-    <state width="1396" height="263" key="GridCell.Tab.0.center" timestamp="1610013718633">
+    <state width="1396" height="263" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1610098363822" />
+    <state width="1396" height="263" key="GridCell.Tab.0.center" timestamp="1610098363822">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1237" height="86" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1609689610113" />
-    <state width="1396" height="263" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1610013718633" />
-    <state width="1396" height="263" key="GridCell.Tab.0.left" timestamp="1610013718632">
+    <state width="1396" height="263" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1610098363822" />
+    <state width="1396" height="263" key="GridCell.Tab.0.left" timestamp="1610098363821">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1237" height="86" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1609689610113" />
-    <state width="1396" height="263" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1610013718632" />
-    <state width="1396" height="263" key="GridCell.Tab.0.right" timestamp="1610013718633">
+    <state width="1396" height="263" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1610098363821" />
+    <state width="1396" height="263" key="GridCell.Tab.0.right" timestamp="1610098363822">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1237" height="86" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1609689610113" />
-    <state width="1396" height="263" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1610013718633" />
-    <state width="1396" height="263" key="GridCell.Tab.1.bottom" timestamp="1610013718633">
+    <state width="1396" height="263" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1610098363822" />
+    <state width="1396" height="263" key="GridCell.Tab.1.bottom" timestamp="1610098363823">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1237" height="214" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1609689610092" />
-    <state width="1396" height="263" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1610013718633" />
-    <state width="1396" height="263" key="GridCell.Tab.1.center" timestamp="1610013718633">
+    <state width="1396" height="263" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1610098363823" />
+    <state width="1396" height="263" key="GridCell.Tab.1.center" timestamp="1610098363822">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1237" height="214" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1609689610092" />
-    <state width="1396" height="263" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1610013718633" />
-    <state width="1396" height="263" key="GridCell.Tab.1.left" timestamp="1610013718633">
+    <state width="1396" height="263" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1610098363822" />
+    <state width="1396" height="263" key="GridCell.Tab.1.left" timestamp="1610098363822">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1237" height="214" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1609689610092" />
-    <state width="1396" height="263" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1610013718633" />
-    <state width="1396" height="263" key="GridCell.Tab.1.right" timestamp="1610013718633">
+    <state width="1396" height="263" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1610098363822" />
+    <state width="1396" height="263" key="GridCell.Tab.1.right" timestamp="1610098363822">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1237" height="214" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1609689610092" />
-    <state width="1396" height="263" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1610013718633" />
+    <state width="1396" height="263" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1610098363822" />
     <state x="250" y="84" key="Maven.ArtifactSearchDialog" timestamp="1606457581853">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -245,10 +223,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="715" height="430" key="XDebugger.FullValuePopup/0.0.1440.860@0.0.1440.860" timestamp="1608794915061" />
-    <state x="427" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1609989251485">
+    <state x="427" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1610076884262">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="427" y="256" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1609989251485" />
+    <state x="427" y="256" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1610076884262" />
     <state x="218" y="143" width="950" height="565" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1608284980480">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
