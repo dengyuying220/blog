@@ -2,15 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c93e9594-a5b2-4386-a457-1306d8f940c3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/AboutShowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/dao/BlogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/dao/BlogRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/service/BlogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/service/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/service/BlogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/ArchiveShowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/ArchiveShowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/TagShowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/TagShowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/TypeShowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/TypeShowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/admin/TagController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deng/blog/web/admin/TagController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/me.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/me.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/_fragment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/blog-input.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/blog-input.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/tag-input.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/tag-input.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/tag.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/type-input.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/type-input.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/type.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/type.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/archive.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/archive.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deng/blog/service/BlogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deng/blog/service/BlogService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deng/blog/service/BlogServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deng/blog/service/BlogServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog - Copy.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blog - Copy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index - Copy.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index - Copy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tag.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/type.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/type.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/_fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/_fragment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/archive.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/archive.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/tag.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,45 +189,45 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="512" y="177" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1604996135494" />
-    <state width="1396" height="263" key="GridCell.Tab.0.bottom" timestamp="1610098363822">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="1237" height="214" key="GridCell.Tab.0.bottom" timestamp="1610288603147">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="86" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1609689610113" />
+    <state width="1237" height="214" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1610288603147" />
     <state width="1396" height="263" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1610098363822" />
-    <state width="1396" height="263" key="GridCell.Tab.0.center" timestamp="1610098363822">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="1237" height="214" key="GridCell.Tab.0.center" timestamp="1610288603147">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="86" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1609689610113" />
+    <state width="1237" height="214" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1610288603147" />
     <state width="1396" height="263" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1610098363822" />
-    <state width="1396" height="263" key="GridCell.Tab.0.left" timestamp="1610098363821">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="1237" height="214" key="GridCell.Tab.0.left" timestamp="1610288603147">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="86" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1609689610113" />
+    <state width="1237" height="214" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1610288603147" />
     <state width="1396" height="263" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1610098363821" />
-    <state width="1396" height="263" key="GridCell.Tab.0.right" timestamp="1610098363822">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="1237" height="214" key="GridCell.Tab.0.right" timestamp="1610288603147">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="86" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1609689610113" />
+    <state width="1237" height="214" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1610288603147" />
     <state width="1396" height="263" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1610098363822" />
-    <state width="1396" height="263" key="GridCell.Tab.1.bottom" timestamp="1610098363823">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="1237" height="214" key="GridCell.Tab.1.bottom" timestamp="1610288602779">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="214" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1609689610092" />
+    <state width="1237" height="214" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1610288602779" />
     <state width="1396" height="263" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1610098363823" />
-    <state width="1396" height="263" key="GridCell.Tab.1.center" timestamp="1610098363822">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="1237" height="214" key="GridCell.Tab.1.center" timestamp="1610288602779">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="214" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1609689610092" />
+    <state width="1237" height="214" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1610288602779" />
     <state width="1396" height="263" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1610098363822" />
-    <state width="1396" height="263" key="GridCell.Tab.1.left" timestamp="1610098363822">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="1237" height="214" key="GridCell.Tab.1.left" timestamp="1610288602779">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="214" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1609689610092" />
+    <state width="1237" height="214" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1610288602779" />
     <state width="1396" height="263" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1610098363822" />
-    <state width="1396" height="263" key="GridCell.Tab.1.right" timestamp="1610098363822">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="1237" height="214" key="GridCell.Tab.1.right" timestamp="1610288602779">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="214" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1609689610092" />
+    <state width="1237" height="214" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1610288602779" />
     <state width="1396" height="263" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1610098363822" />
     <state x="250" y="84" key="Maven.ArtifactSearchDialog" timestamp="1606457581853">
       <screen x="0" y="0" width="1440" height="860" />

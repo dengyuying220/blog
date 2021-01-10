@@ -55,6 +55,10 @@
   padding-bottom: 5em !important;
 }
 
+.m-padded-t-massive {
+  padding-top: 5em !important;
+}
+
 .m-padded-lr-responsive {
   padding-left: 4em !important;
   padding-right: 4em !important;
@@ -90,6 +94,10 @@
   margin-bottom: 0.5em !important;
 }
 
+.m-margin-bottom-large {
+  margin-bottom: 2em !important;
+}
+
 /* font */
 .m-black {
   color: #333 !important;
@@ -97,6 +105,10 @@
 
 .m-teal {
   color: #00b5ad !important;
+}
+
+.m-grey {
+  color: rgba(0, 0, 0, 0.6) !important;
 }
 
 .m-text {

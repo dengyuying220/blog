@@ -29,7 +29,7 @@ public class TagController {
     private TagService tagService;
 
     @GetMapping("/tag")
-    public String list(@PageableDefault(size = 2, sort = {"id"}, direction = Sort.Direction.DESC)
+    public String list(@PageableDefault(size = 10, sort = {"id"}, direction = Sort.Direction.DESC)
                                    Pageable pageable, Model model) {
         model.addAttribute("page", tagService.listTag(pageable));
         return "/admin/tag";
