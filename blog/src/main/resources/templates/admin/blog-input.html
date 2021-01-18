@@ -4,8 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>博客发布页</title>
-    <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
     <link rel="stylesheet" href="../../static/css/me.css" />
     <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.css" />
     <!-- <link rel="stylesheet" href="../css/editormd.css" /> -->
@@ -13,7 +15,10 @@
 
   <body>
     <!-- 导航 -->
-    <nav th:replace="admin/_fragment :: menu(1)" class="ui inverted segment attached m-shadow-small">
+    <nav
+      th:replace="admin/_fragment :: menu(1)"
+      class="ui inverted segment attached m-shadow-small"
+    >
       <div class="ui container">
         <div class="ui inverted secondary stackable menu">
           <h2 class="ui teal header item m-padded-tb-mini">管理后台</h2>
@@ -42,7 +47,7 @@
                   src="https://picsum.photos/seed/picsum/100/100"
                   alt=""
                   class="ui avatar image"
-                />李仁密
+                />邓
               </div>
               <i class="dropdown icon"></i>
               <div class="menu">
@@ -64,8 +69,10 @@
     <div class="ui attached pointing menu container">
       <div class="ui container">
         <div class="right menu">
-          <a href="#" class="active teal item">发布</a>
-          <a href="#" class="item">列表</a>
+          <a href="#" class="active teal item"
+             th:href="@{/admin/blog/input}">发布</a>
+          <a href="#" class="item"
+             th:href="@{/admin/blog}">列表</a>
         </div>
       </div>
     </div>
@@ -73,14 +80,25 @@
     <!-- 中间内容 -->
     <div class="m-padded-tb-big m-container-small">
       <div class="ui container">
-        <form id="blogForm" th:action="@{/admin/blog}" th:object="${blog}" method="post" class="ui form">
-          <input type="hidden" name="id" th:value="*{id}"/>
+        <form
+          id="blogForm"
+          th:action="@{/admin/blog}"
+          th:object="${blog}"
+          method="post"
+          class="ui form"
+        >
+          <input type="hidden" name="id" th:value="*{id}" />
           <input type="hidden" name="publish" />
           <div class="required field">
             <div class="ui labeled input">
               <div class="ui compact teal basic selection dropdown label">
                 <i class="dropdown icon"></i>
-                <input type="hidden" value="原创" name="flag" th:value="*{flag}" />
+                <input
+                  type="hidden"
+                  value="原创"
+                  name="flag"
+                  th:value="*{flag}"
+                />
                 <div class="text">原创</div>
                 <div class="menu">
                   <div class="item" th:data-value="原创">原创</div>
@@ -88,12 +106,22 @@
                   <div class="item" th:data-value="翻译">翻译</div>
                 </div>
               </div>
-              <input th:value="*{title}" type="text" name="title" placeholder="标题" />
+              <input
+                th:value="*{title}"
+                type="text"
+                name="title"
+                placeholder="标题"
+              />
             </div>
           </div>
           <div class="field">
             <div id="content-editormd" style="z-index: 1 !important">
-              <textarea th:text="*{content}" name="content" placeholder="博客内容" style="display: none">
+              <textarea
+                th:text="*{content}"
+                name="content"
+                placeholder="博客内容"
+                style="display: none"
+              >
 [TOC]
 
 #### Disabled options
@@ -126,7 +154,8 @@
 &lt;!-- 繁體中文 --&gt;
 &lt;script src="../dist/js/languages/zh-tw.js"&gt;&lt;/script&gt;
 ```
-</textarea>
+</textarea
+              >
             </div>
           </div>
           <div class="two fields">
@@ -138,7 +167,14 @@
                   <input type="hidden" th:value="*{type.id}" name="type.id" />
                   <div class="text">分类</div>
                   <div class="menu">
-                    <div class="item" th:each="type : ${types}" th:data-value="${type.id}" th:text="${type.name}">错误日志</div>
+                    <div
+                      class="item"
+                      th:each="type : ${types}"
+                      th:data-value="${type.id}"
+                      th:text="${type.name}"
+                    >
+                      错误日志
+                    </div>
                   </div>
                 </div>
               </div>
@@ -151,7 +187,14 @@
                   <input type="hidden" th:value="*{tagIds}" name="tagIds" />
                   <div class="text">标签</div>
                   <div class="menu">
-                    <div class="item" th:each="tag : ${tags}" th:data-value="${tag.id}" th:text="${tag.name}">java</div>
+                    <div
+                      class="item"
+                      th:each="tag : ${tags}"
+                      th:data-value="${tag.id}"
+                      th:text="${tag.name}"
+                    >
+                      java
+                    </div>
                   </div>
                 </div>
               </div>
@@ -160,44 +203,86 @@
           <div class="field">
             <div class="ui labeled input">
               <label class="ui teal basic label">首图</label>
-              <input type="text" name="firstPicture" placeholder="首图地址" th:value="*{firstPicture}" />
+              <input
+                type="text"
+                name="firstPicture"
+                placeholder="首图地址"
+                th:value="*{firstPicture}"
+              />
             </div>
           </div>
           <div class="field">
-            <textarea name="description" placeholder="博客描述" th:text="*{description}"></textarea>
+            <textarea
+              name="description"
+              placeholder="博客描述"
+              th:text="*{description}"
+            ></textarea>
           </div>
           <div class="inline fields">
             <div class="field">
               <div class="ui checkbox">
-                <input type="checkbox" class="hidden" name="recommend" id="recommend" th:checked="*{recommend}" />
+                <input
+                  type="checkbox"
+                  class="hidden"
+                  name="recommend"
+                  id="recommend"
+                  th:checked="*{recommend}"
+                />
                 <label for="recommend">推荐</label>
               </div>
             </div>
             <div class="field">
               <div class="ui checkbox">
-                <input type="checkbox" class="hidden" name="share" id="share" th:checked="*{share}" />
+                <input
+                  type="checkbox"
+                  class="hidden"
+                  name="share"
+                  id="share"
+                  th:checked="*{share}"
+                />
                 <label for="share">转载</label>
               </div>
             </div>
             <div class="field">
               <div class="ui checkbox">
-                <input type="checkbox" class="hidden" name="appreciation" id="appreciation" th:checked="*{appreciation}" />
+                <input
+                  type="checkbox"
+                  class="hidden"
+                  name="appreciation"
+                  id="appreciation"
+                  th:checked="*{appreciation}"
+                />
                 <label for="appreciation">赞赏</label>
               </div>
             </div>
             <div class="field">
               <div class="ui checkbox">
                 <input
-                  type="checkbox" class="hidden" name="commentable" id="commentable" th:checked="*{commentable}"  />
+                  type="checkbox"
+                  class="hidden"
+                  name="commentable"
+                  id="commentable"
+                  th:checked="*{commentable}"
+                />
                 <label for="commentable">评论</label>
               </div>
             </div>
           </div>
           <div class="ui error message"></div>
           <div class="ui right aligned container">
-            <button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
-            <button id="saveBtn" type="button" class="ui secondary button">保存</button>
-            <button id="publishBtn" type="button" class="ui teal button">发布</button>
+            <button
+              type="button"
+              class="ui button"
+              onclick="window.history.go(-1)"
+            >
+              返回
+            </button>
+            <button id="saveBtn" type="button" class="ui secondary button">
+              保存
+            </button>
+            <button id="publishBtn" type="button" class="ui teal button">
+              发布
+            </button>
           </div>
         </form>
       </div>
@@ -205,7 +290,10 @@
     <br />
     <br />
     <!-- 底部footer -->
-    <footer th:replace="admin/_fragment :: footer" class="ui inverted segment attached m-padded-tb-massive">
+    <footer
+      th:replace="admin/_fragment :: footer"
+      class="ui inverted segment attached m-padded-tb-massive"
+    >
       <div class="ui center aligned container">
         <div class="ui inverted divided stackable grid">
           <div class="two wide column">
@@ -261,11 +349,15 @@
       </div>
     </footer>
 
-<th:block th:replace="admin/_fragment :: script">
-      <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <th:block th:replace="admin/_fragment :: script">
+      <script
+        src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"
+      ></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"
+      ></script>
       <script src="../../static/lib/editormd/editormd.js"></script>
-</th:block>
+    </th:block>
     <script>
       $(".m-toggle").click(function () {
         $(".m-item").toggleClass("m-mobile-hide");
@@ -294,24 +386,24 @@
         },
       });
       <!--保存-->
-      $("#saveBtn").click(function() {
+      $("#saveBtn").click(function () {
         $("[name=publish]").val(false);
         $("#blogForm").submit();
       });
       <!--发布-->
-      $("#publishBtn").click(function() {
+      $("#publishBtn").click(function () {
         $("[name=publish]").val(true);
         $("#blogForm").submit();
       });
     </script>
-    <script type="text/javascript">
+    <script type="text/javascript" th:inline="javascript">
       var contentEditor;
       $(function () {
         contentEditor = editormd("content-editormd", {
           width: "100%",
           height: 640,
           syncScrolling: "single",
-          path: "/lib/editormd/lib/",
+          path: /*[[@{/lib/editormd/lib/}]]*/"",
         });
       });
     </script>

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-  <head th:replace="_fragment :: head(~{::title})"><title>首页</title></head>
+  <head th:replace="_fragment :: head(~{::title})">
+    <title>首页</title>
+  </head>
   <body>
     <!-- 导航 -->
     <nav th:replace="_fragment :: menu(1)"></nav>
@@ -50,7 +52,7 @@
                               class="ui avatar image"
                             />
                             <div class="content">
-                              <a href="#" class="header">李密仁</a>
+                              <a href="#" class="header">邓</a>
                             </div>
                           </div>
                           <div class="item">
@@ -105,7 +107,7 @@
                               class="ui avatar image"
                             />
                             <div class="content">
-                              <a href="#" class="header">李密仁</a>
+                              <a href="#" class="header">邓</a>
                             </div>
                           </div>
                           <div class="item">
@@ -160,7 +162,7 @@
                               class="ui avatar image"
                             />
                             <div class="content">
-                              <a href="#" class="header">李密仁</a>
+                              <a href="#" class="header">邓</a>
                             </div>
                           </div>
                           <div class="item">
@@ -215,7 +217,7 @@
                               class="ui avatar image"
                             />
                             <div class="content">
-                              <a href="#" class="header">李密仁</a>
+                              <a href="#" class="header">邓</a>
                             </div>
                           </div>
                           <div class="item">
@@ -408,11 +410,7 @@
               扫码关注我
             </h4>
             <div class="ui centered card" style="width: 11em">
-              <img
-                th:src="@{/images/wx.png}"
-                alt=""
-                class="ui rounded image"
-              />
+              <img th:src="@{/images/wx.png}" alt="" class="ui rounded image" />
             </div>
           </div>
         </div>
@@ -425,8 +423,8 @@
 
     <!-- js -->
     <!--/*/<th:block th:replace="_fragment :: scritpt">/*/-->
-      <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <!--/*/</th:block>/*/-->
     <script>
       $(".m-toggle").click(function () {

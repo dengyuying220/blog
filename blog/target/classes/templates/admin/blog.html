@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
   <head th:replace="admin/_fragment :: head(~{::title})">
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>博客列表管理页</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"/>
-    <link rel="stylesheet" href="../../static/css/me.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
+    <link rel="stylesheet" href="../../static/css/me.css" />
   </head>
 
   <body>
     <!-- 导航 -->
-    <nav th:replace="admin/_fragment :: menu(1)" class="ui inverted segment attached m-shadow-small">
+    <nav
+      th:replace="admin/_fragment :: menu(1)"
+      class="ui inverted segment attached m-shadow-small"
+    >
       <div class="ui container">
         <div class="ui inverted secondary stackable menu">
           <h2 class="ui teal header item m-padded-tb-mini">管理后台</h2>
           <a href="#" class="active m-item item m-mobile-hide">
-            <i class="home icon"></i>博客</a>
+            <i class="home icon"></i>博客</a
+          >
           <a href="#" class="m-item item m-mobile-hide">
-            <i class="idea icon"></i>分类</a>
+            <i class="idea icon"></i>分类</a
+          >
           <a href="#" class="m-item item m-mobile-hide">
-            <i class="tags icon"></i>标签</a>
+            <i class="tags icon"></i>标签</a
+          >
           <div class="right menu m-item m-mobile-hide">
             <div class="ui dropdown item">
               <div class="text">
-                <img src="https://picsum.photos/seed/picsum/100/100" alt="" class="ui avatar image"/>李仁密
+                <img
+                  src="https://picsum.photos/seed/picsum/100/100"
+                  alt=""
+                  class="ui avatar image"
+                />邓
               </div>
               <i class="dropdown icon"></i>
               <div class="menu">
@@ -33,7 +46,10 @@
           </div>
         </div>
       </div>
-      <a href="#" class="ui icon black button m-right-top m-mobile-show m-toggle">
+      <a
+        href="#"
+        class="ui icon black button m-right-top m-mobile-show m-toggle"
+      >
         <i class="inverted sidebar icon"></i>
       </a>
     </nav>
@@ -42,8 +58,10 @@
     <div class="ui attached pointing menu container">
       <div class="ui container">
         <div class="right menu">
-          <a href="#" class="item">发布</a>
-          <a href="#" class="active teal item">列表</a>
+          <a href="#" class="item"
+             th:href="@{/admin/blog/input}">发布</a>
+          <a href="#" class="active teal item"
+             th:href="@{/admin/blog}">列表</a>
         </div>
       </div>
     </div>
@@ -51,48 +69,69 @@
     <!-- 中间内容 -->
     <div class="m-padded-tb-big m-container-small">
       <div class="ui container">
-        <div class="ui success message" th:unless="${#strings.isEmpty(succMessage)}">
+        <div
+          class="ui success message"
+          th:unless="${#strings.isEmpty(succMessage)}"
+        >
           <i class="close icon"></i>
           <div class="header">提示：</div>
           <p th:text="${succMessage}">恭喜，操作成功</p>
         </div>
-        <div class="ui error message" th:unless="${#strings.isEmpty(errMessage)}">
+        <div
+          class="ui error message"
+          th:unless="${#strings.isEmpty(errMessage)}"
+        >
           <i class="close icon"></i>
           <div class="header">提示：</div>
           <p th:text="${errMessage}">操作失败</p>
         </div>
         <form action="" class="ui secondary segment form">
-          <input type="hidden" name="page"/>
+          <input type="hidden" name="page" />
           <div class="fields">
             <div class="field">
-              <input type="text" name="title" placeholder="标题"/>
+              <input type="text" name="title" placeholder="标题" />
             </div>
             <div class="field">
               <div class="ui selection dropdown">
                 <div class="default text">分类</div>
                 <i class="dropdown icon"></i>
-                <input type="hidden" name="typeId"/>
+                <input type="hidden" name="typeId" />
                 <div class="menu">
-                  <div th:each="type : ${types}" class="item" th:data-value="${type.id}" th:text="${type.name}">错误日志</div>
+                  <div
+                    th:each="type : ${types}"
+                    class="item"
+                    th:data-value="${type.id}"
+                    th:text="${type.name}"
+                  >
+                    错误日志
+                  </div>
                   <!--/*<div class="item" data-value="2">开发者手册</div>*/-->
                 </div>
               </div>
             </div>
             <div class="field" style="display: flex; align-items: center">
               <div class="ui checkbox">
-                <input type="checkbox" name="recommend" id="recommend"/>
+                <input type="checkbox" name="recommend" id="recommend" />
                 <label for="recommend">推荐</label>
               </div>
             </div>
             <div class="field" style="display: flex; align-items: center">
-              <button type="button" id="searchBtn" class="ui teal basic mini button">
+              <button
+                type="button"
+                id="searchBtn"
+                class="ui teal basic mini button"
+              >
                 <i class="search icon"></i>搜索
               </button>
             </div>
           </div>
         </form>
 
-        <table id="table-Container" th:fragment="blogList" class="ui teal compact table">
+        <table
+          id="table-Container"
+          th:fragment="blogList"
+          class="ui teal compact table"
+        >
           <thead>
             <tr>
               <th></th>
@@ -113,8 +152,18 @@
               <td th:text="${blog.publish ? '发布' : '草稿'}">是</td>
               <td th:text="${blog.updateTime}">2020/10/27 14:24</td>
               <td>
-                <a href="#" th:href="@{/admin/blog/{id}/input(id=${blog.id})}" class="ui mini teal button">编辑</a>
-                <a href="#" th:href="@{/admin/blog/{id}/delete(id=${blog.id})}" class="ui mini red button">删除</a>
+                <a
+                  href="#"
+                  th:href="@{/admin/blog/{id}/input(id=${blog.id})}"
+                  class="ui mini teal button"
+                  >编辑</a
+                >
+                <a
+                  href="#"
+                  th:href="@{/admin/blog/{id}/delete(id=${blog.id})}"
+                  class="ui mini red button"
+                  >删除</a
+                >
               </td>
             </tr>
           </tbody>
@@ -123,18 +172,32 @@
               <th colspan="7">
                 <div class="ui middle aligned grid">
                   <div class="four wide column">
-                    <a th:href="@{/admin/blog/input}" class="ui mini teal basic button item">新增</a>
+                    <a
+                      th:href="@{/admin/blog/input}"
+                      class="ui mini teal basic button item"
+                      >新增</a
+                    >
                   </div>
                   <div class="twelve wide column">
                     <div class="ui right floated pagination mini menu">
-                      <a class="icon item" onclick="page(this)" th:attr="data-page=${page.getNumber() - 1}" th:unless="${page.isFirst()}">
+                      <a
+                        class="icon item"
+                        onclick="page(this)"
+                        th:attr="data-page=${page.getNumber() - 1}"
+                        th:unless="${page.isFirst()}"
+                      >
                         上一页
                       </a>
                       <!--                      <a class="item" onclick="page(this)" th:attr="data-page=${page.getNumber() + index - 1}"
                                                th:if="${page.getNumber() + index <= page.getTotalPages()}"
                                                th:each="index:${#numbers.sequence(1, 4)}" th:text="${page.getNumber() + index}">1
                                             </a>-->
-                      <a class="icon item" onclick="page(this)" th:attr="data-page=${page.getNumber() + 1}" th:unless="${page.isLast()}">
+                      <a
+                        class="icon item"
+                        onclick="page(this)"
+                        th:attr="data-page=${page.getNumber() + 1}"
+                        th:unless="${page.isLast()}"
+                      >
                         下一页
                       </a>
                     </div>
@@ -146,17 +209,27 @@
         </table>
       </div>
     </div>
-    <br/>
-    <br/>
+    <br />
+    <br />
     <!-- 底部footer -->
-    <footer th:replace="admin/_fragment :: footer" class="ui inverted segment attached m-padded-tb-massive">
+    <footer
+      th:replace="admin/_fragment :: footer"
+      class="ui inverted segment attached m-padded-tb-massive"
+    >
       <div class="ui center aligned container">
         <div class="ui inverted divided stackable grid">
           <div class="two wide column">
-            <img class="ui centered rounded image" style="width: 100px" src="../../static/images/wx.png" alt=""/>
+            <img
+              class="ui centered rounded image"
+              style="width: 100px"
+              src="../../static/images/wx.png"
+              alt=""
+            />
           </div>
           <div class="four wide column">
-            <h4 class="ui inverted header m-font-thin m-font-spaced m-font-line">
+            <h4
+              class="ui inverted header m-font-thin m-font-spaced m-font-line"
+            >
               最新博客
             </h4>
             <div class="ui inverted link list">
@@ -166,16 +239,22 @@
             </div>
           </div>
           <div class="four wide column">
-            <h4 class="ui inverted header m-font-thin m-font-spaced m-font-line">
+            <h4
+              class="ui inverted header m-font-thin m-font-spaced m-font-line"
+            >
               联系我
             </h4>
             <div class="ui inverted link list">
-              <a href="#" class="item m-font-line">Emain: 18208214305@163.com</a>
+              <a href="#" class="item m-font-line"
+                >Emain: 18208214305@163.com</a
+              >
               <a href="#" class="item m-font-line">QQ: 1187232061</a>
             </div>
           </div>
           <div class="six wide column">
-            <h4 class="ui inverted header m-font-thin m-font-spaced m-font-line">
+            <h4
+              class="ui inverted header m-font-thin m-font-spaced m-font-line"
+            >
               最新博客
             </h4>
             <div class="ui link list">
@@ -207,13 +286,16 @@
         loadData();
       });
       function loadData() {
-        $("#table-Container").load( /*[[@{/admin/blog/search}]]*/
-            "/admin/blog/search", {
-          title: $("[name='title']").val(),
-          typeId: $("[name='typeId']").val(),
-          recommend: $("[name='recommend']").prop("checked"),
-          page: $("[name='page']").val()
-        })
+        $("#table-Container").load(
+          /*[[@{/admin/blog/search}]]*/
+          "/admin/blog/search",
+          {
+            title: $("[name='title']").val(),
+            typeId: $("[name='typeId']").val(),
+            recommend: $("[name='recommend']").prop("checked"),
+            page: $("[name='page']").val(),
+          }
+        );
       }
       // 关闭提示
       $(".message .close").on("click", function () {
@@ -222,4 +304,3 @@
     </script>
   </body>
 </html>
-

@@ -80,7 +80,7 @@
           >
             <a
               href="#"
-              class="ui basic button"
+              class="ui basic button m-grey"
               th:classappend="${activeTypeId == type.id} ? 'teal'"
               th:href="@{/type/{id}(id=${type.id})}"
               th:text="${type.name}"
@@ -88,7 +88,7 @@
               思考与感悟
             </a>
             <div
-              class="ui basic left pointing label"
+              class="ui basic left pointing label m-grey"
               th:text="${#arrays.length(type.blogLst)}"
               th:classappend="${activeTypeId == type.id} ? 'teal'"
             >
@@ -140,7 +140,7 @@
                             href="#"
                             class="header"
                             th:text="${blog.user.nickname}"
-                            >李密仁</a
+                            >邓</a
                           >
                         </div>
                       </div>
@@ -206,7 +206,7 @@
                           class="ui avatar image"
                         />
                         <div class="content">
-                          <a href="#" class="header">李密仁</a>
+                          <a href="#" class="header">邓</a>
                         </div>
                       </div>
                       <div class="item">
@@ -247,7 +247,7 @@
                 href="#"
                 class="ui teal basic mini button"
                 th:unless="${page.isFirst()}"
-                th:href="@{/type/{id}(id=${activeTypeId}, page=${page.getNumber() - 1})}" 
+                th:href="@{/type/{id}(id=${activeTypeId}, page=${page.getNumber() - 1})}"
                 >上一页</a
               >
             </div>

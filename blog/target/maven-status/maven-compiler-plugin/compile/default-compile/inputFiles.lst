@@ -17,6 +17,7 @@ F:\git-download\blog\blog\src\main\java\com\deng\blog\po\Tag.java
 F:\git-download\blog\blog\src\main\java\com\deng\blog\web\TagShowController.java
 F:\git-download\blog\blog\src\main\java\com\deng\blog\dao\TagRepository.java
 F:\git-download\blog\blog\src\main\java\com\deng\blog\po\Type.java
+F:\git-download\blog\blog\src\main\java\com\deng\blog\web\AboutShowController.java
 F:\git-download\blog\blog\src\main\java\com\deng\blog\po\Comment.java
 F:\git-download\blog\blog\src\main\java\com\deng\blog\service\TypeService.java
 F:\git-download\blog\blog\src\main\java\com\deng\blog\handler\ControllerException.java
