@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncodeing=utf-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://192.168.38.92:3306/blog?useUnicode=true&amp;characterEncodeing=utf-8&amp;serverTimezone=Asia/Shanghai
     username: root
     password: root
   jpa:
@@ -14,4 +14,6 @@ logging:
               root: info
               com.deng: debug
             file:
-              name: /usr/local/apache-tomcat-9.0.41/webapps/blog/log/blog.log
+              name: /log/blog.log
+#              name: /usr/local/apache-tomcat-9.0.41/webapps/blog/log/blog.log
+#            path: ./log

@@ -19,7 +19,7 @@ import java.util.Arrays;
 public class LogAspect {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Pointcut("execution(* com.deng.blog.web.*.*(..))")
+    @Pointcut("execution(* com.deng.blog.web.*.*.*(..))")
     public void  log() {}
 
     @Before("log()")

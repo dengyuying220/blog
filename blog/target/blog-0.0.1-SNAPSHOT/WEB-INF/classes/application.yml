@@ -14,4 +14,6 @@ logging:
               root: info
               com.deng: debug
             file:
-              name: /usr/local/apache-tomcat-9.0.41/webapps/blog/log/blog.log
+              name: ./log/blog.log
+#              name: /usr/local/apache-tomcat-9.0.41/webapps/blog/log/blog.log
+#            path: ./log
